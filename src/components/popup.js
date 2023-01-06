@@ -16,22 +16,24 @@ function Popup(props) {
     setDataInput([info]);
   }
 
-
   useEffect(() => {
-    if (authType) {
-      document.getElementById("loginText").style.background = 'red';
-      document.getElementById("registerText").style.background = '#1c2b3b';
-    }
-    else{
-      document.getElementById("loginText").style.background = '#1c2b3b';
-      document.getElementById("registerText").style.background = 'red';
-    }
-  }, [authType]);
+      if (props.trigger) {
+      if (authType) {
+        document.getElementById("loginText").style.background = 'red';
+        document.getElementById("registerText").style.background = '#1c2b3b';
+      }
+      else{
+        document.getElementById("loginText").style.background = '#1c2b3b';
+        document.getElementById("registerText").style.background = 'red';
+      }
+  }
+    }, [authType]);
+
 
   return (props.trigger) ? (
     <div className="popup">
       <div className="innerContainer">
-        <button className="closeBtn" onClick={() => props.setTrigger(false)}>Close</button>
+        <button className="closeBtn" onClick={() => {props.setTrigger(false); setauthType(true)}}>Close</button>
         {/* {props.children} */}
         
         <div className="wrap">
