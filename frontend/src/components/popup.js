@@ -17,25 +17,25 @@ function Popup(props) {
   }
 
   useEffect(() => {
-      if (props.trigger) {
+    if (props.trigger) {
       if (authType) {
         document.getElementById("loginText").style.background = 'red';
         document.getElementById("registerText").style.background = '#1c2b3b';
       }
-      else{
+      else {
         document.getElementById("loginText").style.background = '#1c2b3b';
         document.getElementById("registerText").style.background = 'red';
       }
-  }
-    }, [authType]);
+    }
+  }, [authType]);
 
 
   return (props.trigger) ? (
     <div className="popup">
       <div className="innerContainer">
-        <button className="closeBtn" onClick={() => {props.setTrigger(false); setauthType(true)}}>Close</button>
+        <button className="closeBtn" onClick={() => { props.setTrigger(false); setauthType(true) }}>Close</button>
         {/* {props.children} */}
-        
+
         <div className="wrap">
           <form action="" className="login" onSubmit={submitThis}>
             <div className="toggle-bar">
@@ -49,7 +49,7 @@ function Popup(props) {
           </form>
         </div>
 
-        <Login trigger={authType} setTrigger={setauthType} firstName={firstName} setfirstName={setfirstName} lastName={lastName} setlastName={setlastName} email={email} setEmail={setEmail} pass={passw} setPass={setPassw} />
+        <Login trigger={authType} setTrigger={setauthType} firstName={firstName} setfirstName={setfirstName} lastName={lastName} setlastName={setlastName} email={email} setEmail={setEmail} pass={passw} setPassw={setPassw} />
       </div>
     </div>
   ) : "";
