@@ -1,19 +1,235 @@
-.navbar{
+.sideBar {
+    width: 275px;
+    background-color: rgb(255, 255, 234);
     position: fixed;
-    width: 100%;
-    height: 55px;
-    background-color: black;
-    color: white;
-    padding: 0px 20px 0 10px;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    height: 100%;
+    padding: 30px;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
+    border-right: 3px solid #505050;
+    transition: all 0.8s ease;
 }
 
-.loginBtn{
-    border: 2px solid white;
+.nav {
+    list-style: none;
+}
+
+.sideBar .logo {
+    position: absolute;
+    top: 50px;
+}
+
+.sideBar .logo a {
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    padding: 15px 20px;
+    font-size: 38px;
+    font-family: VS;
+    letter-spacing: 3.5px;
+}
+
+.sideBar .logo a span {
+    font-weight: 800;
+    color: #ff0066;
+    font-family: VS;
+    font-size: 38px;
+}
+
+.sideBar .logo a::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-bottom: 5px solid rgb(38, 0, 255);
+    border-left: 5px solid red;
+    bottom: 0;
+    left: 0;
+    transition: all 0.5s ease;
+}
+
+.sideBar .logo a:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.sideBar .logo a::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-top: 5px solid rgb(38, 0, 255);
+    border-right: 5px solid red;
+    top: 0;
+    right: 0;
+    transition: all 0.5s ease;
+}
+
+.sideBar .logo a:hover::after {
+    width: 100%;
+    height: 100%;
+}
+
+.sideBar .nav {
+    margin-top: 50px;
+}
+
+.sideBar .nav li {
+    margin-bottom: 25px;
+    display: block;
+}
+
+.sideBar .nav li{
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    color: #000000;
     padding: 4px 15px;
+    border-bottom: 2px solid #cbc5cd;
+    transition: all 0.4s ease;
+    align-items: center;
+}
+
+.sideBar .nav li:hover, .active{
+    color: red;
+}
+
+.sideBar .nav li img{
+    margin-right: 5px;
+    margin-bottom: -4px;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-toggler {
+    width: 45px;
+    height: 40px;
+    border: 1px solid #e8dfec;
     cursor: pointer;
-    margin: 0px 10px;
+    position: fixed;
+    left: 300px;
+    top: 20px;
+    border-radius: 5px;
+    background: rgb(255, 255, 234);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 11;
+    display: none;
+}
+
+.nav-toggler span {
+    height: 2px;
+    width: 20px;
+    background: red;
+    display: inline-block;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.nav-toggler span::before {
+    content: "";
+    position: absolute;
+    height: 2.5px;
+    width: 16px;
+    background: red;
+    top: -6px;
+    left: 0;
+    transition: all 0.5s ease;
+}
+
+.nav-toggler span::after {
+    content: "";
+    position: absolute;
+    height: 2.5px;
+    width: 12px;
+    background: red;
+    top: 6px;
+    left: 0;
+    transition: all 0.1s ease;
+}
+
+/* responsiveness */
+
+@media (max-width: 1000px) and (min-width: 690px) {
+    .section {
+        min-height: 70vh;
+        height: 100%;
+        z-index: 0;
+        opacity: 1;
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        left: 0;
+        top: 80px;
+        padding-top: 25px;
+    }
+
+    .sideBar {
+        width: 100vw;
+        position: fixed;
+        z-index: 10;
+        height: 80px;
+        padding: 5px 10px;
+        display: flex;
+    }
+
+    .nav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+
+    .sideBar .nav li {
+        margin-bottom: 0px;
+        display: block;
+        margin: 0 15px;
+    }
+
+    .sideBar .logo {
+        display: none;
+        top: 0;
+    }
+
+    .sideBar .nav {
+        margin-top: 0px;
+    }
+
+}
+
+@media (max-width: 800px) and (min-width: 690px) {
+    .sideBar {
+        padding: 5px 8px;
+    }
+
+    .sideBar .nav li {
+        margin-bottom: 0px;
+        display: block;
+        margin: 0 8px;
+    }
+}
+
+@media (max-width: 690px) {
+    .nav-toggler {
+        display: flex;
+        top: 10px;
+        left: 10px;
+    }
+
+    .section {
+        left: 0px;
+        display: flex;
+    }
+
+    .sideBar {
+        left: -100%;
+        width: 100%;
+    }
 }
