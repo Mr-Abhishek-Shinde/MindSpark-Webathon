@@ -27,7 +27,7 @@ function Popup(props) {
         document.getElementById("registerText").style.background = 'red';
       }
     }
-  }, [authType]);
+  }, [authType, props.trigger]);
 
 
   return (props.trigger) ? (
