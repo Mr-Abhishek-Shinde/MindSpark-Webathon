@@ -1,24 +1,26 @@
-.container{
-    width: 100vw;
-    height: calc(100vh - 65px);
+.homeContainer{
+    width: 100%;
+    /* min-height: calc(100vh - 65px); */
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     margin: 0;
     padding: 20px;
+    /* background-color: azure; */
 }
 
-.container .titleText{
+.homeContainer .titleText{
     font-size: 35px;
     color: black;
     font-weight: 700;
 }
-.container .titleText .span1{
+.homeContainer .titleText .span1{
     font-size: 50px;
     color: rgb(228, 35, 0);
 }
-.container .titleText .span2{
+.homeContainer .titleText .span2{
     font-size: 35px;
     color: rgb(39, 18, 227);
 }

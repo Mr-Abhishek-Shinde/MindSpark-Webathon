@@ -1,14 +1,16 @@
 import React from 'react';
 import './home.css';
+import ChampCard from "../components/championCard";
 
 
 export default function Home() {
 
     return (
         <>
-            <div className="container">
+            <div className="homeContainer">
                 <h1 className='titleText'>Welcome to <br/><span className='span1'>BridgeStone<br/></span> <span className='span2'>Idea Submission Platform</span> </h1>
             </div>
+            <ChampCard/>
         </>
     )
 }
