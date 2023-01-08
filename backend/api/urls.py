@@ -3,5 +3,7 @@ from . import views
 
 urlpatterns = [
     path("", views.getRoutes, name="routes"),
-    path("ideators/new", views.createIdeator, name="users-create")
+    path("users/", views.getUsers, name="ideators"),
+    path("ideators/", views.getIdeators, name="ideators"),
+    path("ideators/new", views.createIdeator, name="ideatorss-create")
 ]
