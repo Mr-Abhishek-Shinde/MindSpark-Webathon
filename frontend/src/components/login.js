@@ -12,7 +12,7 @@ function Login(props) {
 			"password": event.target.passw.value,
 		}
 
-		const response = await fetch("/api/ideators/new", {
+		const response = await fetch("http://localhost:8000/users/new/", {
 			method: "POST",
 			mode: 'cors',
 			headers: {
@@ -21,7 +21,7 @@ function Login(props) {
 			},
 			body: JSON.stringify(user)
 		})
-		const data = response.json()
+		const data = await response.json()
 		console.log(data)
 
 	}

@@ -5,5 +5,5 @@ urlpatterns = [
     path("", views.getRoutes, name="routes"),
     path("users/", views.getUsers, name="ideators"),
     path("ideators/", views.getIdeators, name="ideators"),
-    path("ideators/new", views.createIdeator, name="ideatorss-create")
+    path("ideators/new", views.createIdeator, name="ideators-create")
 ]

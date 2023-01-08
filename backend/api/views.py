@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
 from .models import Ideator, Jury, Admin
-from .serializers import UserSerializer
+from .serializers import IdeatorSerializer
 
 # Create your views here.
 
@@ -68,14 +68,14 @@ def getRoutes(request):
 @api_view(["GET"])
 def getIdeators(request):
     ideators = Ideator.objects.all()
-    serializer = UserSerializer(ideators, many=True)
+    serializer = IdeatorSerializer(ideators, many=True)
     return Response(serializer.data)
 
 @api_view(["POST"])
 def createIdeator(request):
     data = request.data
     ideator =  Ideator.objects.get(id=1)
-    serializer = UserSerializer(instance=ideator, data=data)
+    serializer = IdeatorSerializer(instance=ideator, data=data)
     return Response("Data Received!") 
 
 @api_view(["GET"])
@@ -84,9 +84,9 @@ def getUsers(request):
     jurys = Jury.objects.all()
     admins = Admin.objects.all()
 
-    ideator_data = UserSerializer(ideators, many=True).data
-    jury_data = UserSerializer(jurys, many=True).data
-    admin_data = UserSerializer(admins, many=True).data
+    ideator_data = IdeatorSerializer(ideators, many=True).data
+    jury_data = IdeatorSerializer(jurys, many=True).data
+    admin_data = IdeatorSerializer(admins, many=True).data
 
 
     users = ideator_data + jury_data + admin_data
