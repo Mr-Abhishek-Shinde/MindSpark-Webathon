@@ -4,8 +4,7 @@ from django.http import JsonResponse
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
-from django.contrib.auth import authenticate
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 
 from .serializers import UserSerializer
@@ -44,3 +43,21 @@ def createUser(request):
         return JsonResponse(data)
     except:
         return Response("existing_user")
+
+@api_view(["POST"])
+def loginUser(request):
+    username = request.data['email'].split("@")[0]
+    password = request.data['password']
+
+    try:
+        user = authenticate(request, username=username, password=password)
+        if user:
+            serializer = UserSerializer(user, many=False)
+            return Response(serializer.data)
+        else:
+            return Response("invalid_credentials")
+    except:
+        return Response("invalid_credentials")
+
+
+
