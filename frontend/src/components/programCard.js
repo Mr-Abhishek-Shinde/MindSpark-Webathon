@@ -9,9 +9,7 @@
 import React, { useState } from 'react';
 import cardImg from './img/wallpaper.jpg';
 import './programCard.css'
-// import Carousel from 'react-bootstrap/Carousel';
-// import {render} from 'react-dom';
-import Button from 'react-bootstrap/Button';
+import Button from '@mui/material/Button';
 
 function ProgramCard() {
 //   const [index, setIndex] = useState(0);
@@ -39,10 +37,8 @@ function ProgramCard() {
             <span>Marketing</span>
             <span>Finance</span>
             <p>+2 more</p>
-            {/* <div className="tag">Marketing</div>
-            <div className="tag">Finance</div> */}
-            
-        </div><Button variant="light">View Details</Button></div>  
+            </div><Button variant="light">Contained</Button></div>  
+        
         <div className="card">
         <img src={cardImg} alt="" />
         <p>3 interested</p>
@@ -51,7 +47,7 @@ function ProgramCard() {
         <span>Marketing</span>
             <span>Finance</span>
             <p>+2 more</p>
-        </div><Button variant="light">View Details</Button></div>  
+        </div><Button variant="contained">Contained</Button></div>  
     </div>
     
   );
