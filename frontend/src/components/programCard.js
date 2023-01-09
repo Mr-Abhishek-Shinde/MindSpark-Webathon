@@ -1,14 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import cardImg from '../img/wallpaper.jpg';
 import './programCard.css'
 import { Button } from "@material-ui/core";
 
 function ProgramCard() {
-  //   const [index, setIndex] = useState(0);
 
-  //   const handleSelect = (selectedIndex, e) => {
-  //     setIndex(selectedIndex);
-  //   };
 
   return (
     <div className="wrapper" >
@@ -21,7 +17,7 @@ function ProgramCard() {
           <span>Finance</span>
           <p>+2 more</p>
         </div>
-        <Button variant="light">View Details</Button>
+        <Button variant="contained">View Details</Button>
       </div>
 
       <div className="card">
@@ -33,7 +29,7 @@ function ProgramCard() {
           <span>Finance</span>
           <p>+2 more</p>
         </div>
-        <Button variant="light">Contained</Button>
+        <Button variant="contained">View Details</Button>
       </div>
 
       <div className="card">
@@ -45,7 +41,7 @@ function ProgramCard() {
           <span>Finance</span>
           <p>+2 more</p>
         </div>
-        <Button variant=" " sx={{ color: 'black',}}>Apply</Button>
+        <Button variant="contained">View Details</Button>
       </div>
     </div>
 
