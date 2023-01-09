@@ -1,7 +1,7 @@
 import React from 'react'
 import cardImg from '../img/wallpaper.jpg';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import PersonIcon from '@mui/icons-material/Person';
+// import VisibilityIcon from '@mui/icons-material/Visibility';
+// import PersonIcon from '@mui/icons-material/Person';
 import './programDetails.css';
 
 
@@ -22,9 +22,9 @@ function ProgramDetails() {
         <p>Date to Date</p> 
         <hr/>
         <h4>Interseted | Visitors</h4>
-        <span><PersonIcon/>&nbsp;</span>
+        {/* <span><PersonIcon/>&nbsp;</span> */}
         <span>0 &nbsp;</span>
-        <span><VisibilityIcon/>&nbsp;</span>
+        {/* <span><VisibilityIcon/>&nbsp;</span> */}
         <span>4</span>
       </div>
     </div>

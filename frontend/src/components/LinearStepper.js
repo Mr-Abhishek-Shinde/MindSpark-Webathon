@@ -1,19 +1,9 @@
 import React, { useState } from "react";
-import {
-    Typography,
-    TextField,
-    Button,
-    Stepper,
-    Step,
-    StepLabel,
-} from "@material-ui/core";
+import './linearStepper.css'
+import { Typography, Button, Stepper, Step, StepLabel } from "@material-ui/core";
+
 import { makeStyles } from "@material-ui/core/styles";
-import {
-    useForm,
-    Controller,
-    FormProvider,
-    useFormContext,
-} from "react-hook-form";
+import { useForm, FormProvider } from "react-hook-form";
 
 const useStyles = makeStyles((theme) => ({
     button: {
@@ -28,121 +18,31 @@ function getSteps() {
     ];
 }
 const BasicForm = () => {
-    const { control } = useFormContext();
+
     return (
         <>
-            <Controller
-                control={control}
-                name="firstName"
-                render={({ field }) => (
-                    <TextField
-                        id="first-name "
-                        label="First Name"
-                        variant="outlined"
-                        placeholder="Enter Your First Name"
-                        fullWidth
-                        required
-                        margin="normal"
-                        size="small"
-                        {...field}
-                    />
-                )}
-            />
-
-            <Controller
-                control={control}
-                name="lastName"
-                render={({ field }) => (
-                    <TextField
-                        id="last-name"
-                        label="Last Name"
-                        variant="outlined"
-                        placeholder="Enter Your Last Name"
-                        fullWidth
-                        required
-                        margin="normal"
-                        size="small"
-                        {...field}
-                    />
-                )}
-            />
-
-            <Controller
-                control={control}
-                name="nickName"
-                render={({ field }) => (
-                    <TextField
-                        id="nick-name"
-                        label="Nick Name"
-                        variant="outlined"
-                        placeholder="Enter Your Nick Name"
-                        fullWidth
-                        required
-                        margin="normal"
-                        size="small"
-                        {...field}
-                    />
-                )}
-            />
+            <div className="ideaFormContainer">
+            <p>First Name: <input type="text" name="first_name" placeholder="Enter First Name" required="true"/></p>
+            <p>Last Name: <input type="text" name="last_name" placeholder="Enter Last Name" required="true"/></p>
+            <p>Your Email: <input type="email" name="email" id="email" placeholder="Valid Email Address" required="true"/></p>
+            <p>Phone Number: <input type="text" name="phone" id="ph" placeholder="Enter Phone No." maxlength="10" required="true"/></p>
+            <p>Gender: <input type="text" name="gender" id="gender" placeholder="" required="true"/></p>
+            <p>Age: <input type="number" name="age" id="age" placeholder="Enter Age" required="true"/></p>
+            <p>Current Industry: <input type="text" name="industry" placeholder="Enter Your Industry Name" /></p>
+            <p>Total years of experience: <input type="number" name="exp" id="exp" placeholder="in years"/></p>
+            </div>
         </>
     );
 };
 
 const PaymentForm = () => {
-    const { control } = useFormContext();
     return (
         <>
-            <Controller
-                control={control}
-                name="cardNumber"
-                render={({ field }) => (
-                    <TextField
-                        id="cardNumber"
-                        label="Card Number"
-                        variant="outlined"
-                        placeholder="Enter Your Card Number"
-                        fullWidth
-                        required
-                        margin="normal"
-                        size="small"
-                        {...field}
-                    />
-                )}
-            />
-            <Controller
-                control={control}
-                name="cardMonth"
-                render={({ field }) => (
-                    <TextField
-                        id="cardMonth"
-                        label="Card Month"
-                        variant="outlined"
-                        placeholder="Enter Your Card Month"
-                        fullWidth
-                        required
-                        margin="normal"
-                        size="small"
-                        {...field}
-                    />
-                )}
-            />
-            <Controller
-                control={control}
-                name="cardYear"
-                render={({ field }) => (
-                    <TextField
-                        id="cardYear"
-                        label="Card Year"
-                        variant="outlined"
-                        placeholder="Enter Your Card Year"
-                        fullWidth
-                        required
-                        margin="normal"
-                        size="small"
-                        {...field}
-                    />
-                )}
-            />
+            <div className="ideaFormContainer">
+            <p>Program Name: <input type="text" name="program_name" placeholder="Enter the name of the program" required="true"/></p>
+            <p>Idea Descreption: <input type="text" name="idea_desc" placeholder="Enter descreption of the idea" /></p>
+            <p>Attach your file below: <input type="file" name="idea_file" placeholder="Submit the idea here" required="true"/></p>
+            </div>
         </>
     );
 };
@@ -175,18 +75,8 @@ const LinearStepper = () => {
     const [activeStep, setActiveStep] = useState(0);
     const steps = getSteps();
 
-    const handleNext = (data) => {
-        console.log(data);
-        if (activeStep === steps.length - 1) {
-            fetch("https://jsonplaceholder.typicode.com/comments")
-                .then((data) => data.json())
-                .then((res) => {
-                    console.log(res);
-                    setActiveStep(activeStep + 1);
-                });
-        } else {
-            setActiveStep(activeStep + 1);
-        }
+    const handleNext = () => {
+        setActiveStep(activeStep + 1);
     };
 
     const handleBack = () => {
@@ -218,7 +108,7 @@ const LinearStepper = () => {
                         <form onSubmit={methods.handleSubmit(handleNext)}>
                             {getStepContent(activeStep)}
 
-                            <Button style={{position: "absolute", top: "70vh", left: "44vw"}}
+                            <Button style={{ position: "absolute", top: "70vh", left: "44vw" }}
                                 className={classes.button}
                                 disabled={activeStep === 0}
                                 onClick={handleBack}
@@ -226,7 +116,7 @@ const LinearStepper = () => {
                                 Back
                             </Button>
 
-                            <Button style={{position: "absolute", top: "70vh", left: "50vw"}}
+                            <Button style={{ position: "absolute", top: "70vh", left: "50vw" }}
                                 className={classes.button}
                                 variant="contained"
                                 color="primary"
