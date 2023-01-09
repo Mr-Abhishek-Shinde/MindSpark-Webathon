@@ -1,14 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import cardImg from '../img/wallpaper.jpg';
 import './programCard.css'
 import { Button } from "@material-ui/core";
 
 function ProgramCard() {
-  //   const [index, setIndex] = useState(0);
 
-  //   const handleSelect = (selectedIndex, e) => {
-  //     setIndex(selectedIndex);
-  //   };
 
   return (
     <div className="wrapper" >
