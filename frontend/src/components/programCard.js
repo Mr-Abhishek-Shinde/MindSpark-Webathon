@@ -21,7 +21,7 @@ function ProgramCard() {
           <span>Finance</span>
           <p>+2 more</p>
         </div>
-        <Button variant="light">View Details</Button>
+        <Button variant="contained">View Details</Button>
       </div>
 
       <div className="card">
@@ -33,7 +33,7 @@ function ProgramCard() {
           <span>Finance</span>
           <p>+2 more</p>
         </div>
-        <Button variant="light">Contained</Button>
+        <Button variant="contained">View Details</Button>
       </div>
 
       <div className="card">
@@ -45,7 +45,7 @@ function ProgramCard() {
           <span>Finance</span>
           <p>+2 more</p>
         </div>
-        <Button variant=" " sx={{ color: 'black',}}>Apply</Button>
+        <Button variant="contained">View Details</Button>
       </div>
     </div>
 
