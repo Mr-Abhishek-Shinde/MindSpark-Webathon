@@ -1,12 +1,13 @@
 import React from 'react'
 import './idea.css'
+import userImage from "../../img/userImage.png"
 
 function Idea() {
   return (
     <>
     <div className='idea-container'>
         <h3>Title</h3>
-        <div className='wrapper'>
+        <div className='idea-wrapper'>
             <div>
                 <input className='check' type = "checkbox"/><span>Application Stage</span>
             </div>
@@ -19,35 +20,28 @@ function Idea() {
                 </ul>
             </div>
         </div>
-        <hr/>
-        <div>
-            <div>
-                <img></img>
-                <h3>email</h3><span>112103134</span>
+        <div className='wrap-2'>
+            <div className='user-info son' >
+                <img src={userImage} id="idea-image"></img>
+                <div>
+                    <h6>email</h6><span>112103134</span>
+                </div>
             </div>
-            <div>
-                <h2>Name</h2>
-                <h3>Program Name</h3>
+            <div className='son'>
+                <h6>Name</h6>
+                <h5>Program Name</h5>
             </div>
-            <div>
-                <h1>Email</h1>
+            <div className='son'>
+                <h6>Email</h6>
             </div>
-            <div>
-                <h1>Id</h1>
+            <div className='son'>
+                <h6>Id</h6>
             </div>
         </div>
-        <div>
-            <ul>
-                <li>
-                    <button>Accept</button>
-                </li>
-                <li>
-                    <button>Hold</button>
-                </li>
-                <li>
-                    <button>Reject</button>
-                </li>
-            </ul>
+        <div className='button-wrap'>
+            <span className='idea-btn accept'>Accept</span>
+            <span className='idea-btn hold'>Hold</span>          
+            <span className='idea-btn reject'>Reject</span>
         </div>
     </div>
     </>
