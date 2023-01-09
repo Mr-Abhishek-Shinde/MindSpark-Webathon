@@ -1,4 +1,6 @@
-import React from 'react';
+import { React, useState, useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useCookies } from 'react-cookie';
 
 function Login(props) {
@@ -26,7 +28,12 @@ function Login(props) {
 		})
 		const data = await response.json()
 		console.log(data)
-
+		if (data !== "existing_user") {
+			notifyRegistered();
+		}
+		else{
+			notifyExistingUser();
+		}
 	}
 
 	const loginUser = async (event) => {
@@ -49,13 +56,20 @@ function Login(props) {
 		const data = await response.json()
 		console.log(data)
 		setCookie('user', data, { path: '/' });
-
 	}
 
-	const [authType, setauthType] = React.useState('user');
+	const [authType, setauthType] = useState('user');
+	const [registered, setregistered] = useState(false);
 
 	const handleChange = (event) => {
-	  setauthType(event.target.value);
+		setauthType(event.target.value);
+	}
+
+	const notifyRegistered = () => {
+		toast.success("Registered Successfully!");
+	}
+	const notifyExistingUser = () => {
+		toast.warning("You have already registered! Please login to continue.");
 	}
 
 	return (props.trigger) ? (
@@ -104,6 +118,7 @@ function Login(props) {
 				<p id="registered" onClick={() => props.setTrigger(true)}>Already registered?</p>
 				<button className="btn btn-action" id="btn-register">Register</button>
 			</form>
+			<ToastContainer />
 		</div>
 	)
 
