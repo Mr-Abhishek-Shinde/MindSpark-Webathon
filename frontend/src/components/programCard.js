@@ -7,9 +7,11 @@
 // }
 
 import React, { useState } from 'react';
-import cardImg from './img/wallpaper.jpg';
+import cardImg from '../img/wallpaper.jpg';
 import './programCard.css'
-import Button from '@mui/material/Button';
+import {
+  Button,
+} from "@material-ui/core";
 
 function ProgramCard() {
 //   const [index, setIndex] = useState(0);
