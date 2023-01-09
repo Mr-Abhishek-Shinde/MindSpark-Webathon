@@ -108,7 +108,7 @@ const LinearStepper = () => {
                         <form onSubmit={methods.handleSubmit(handleNext)}>
                             {getStepContent(activeStep)}
 
-                            <Button style={{ position: "absolute", top: "70vh", left: "44vw" }}
+                            <Button style={{ position: "absolute", top: "85vh", left: "44vw" }}
                                 className={classes.button}
                                 disabled={activeStep === 0}
                                 onClick={handleBack}
@@ -116,7 +116,7 @@ const LinearStepper = () => {
                                 Back
                             </Button>
 
-                            <Button style={{ position: "absolute", top: "70vh", left: "50vw" }}
+                            <Button style={{ position: "absolute", top: "85vh", left: "50vw" }}
                                 className={classes.button}
                                 variant="contained"
                                 color="primary"
