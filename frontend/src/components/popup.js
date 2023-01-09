@@ -5,10 +5,10 @@ import Login from './login'
 function Popup(props) {
   const [authType, setauthType] = useState(true);
 
-  const [firstName, setfirstName] = useState("");
-  const [lastName, setlastName] = useState("");
+  const [fullName, setfullName] = useState("");
   const [email, setEmail] = useState("");
   const [passw, setPassw] = useState("");
+  const [role, setRole] = useState("");
   const [dataInput, setDataInput] = useState("");
 
   const submitThis = () => {
@@ -49,7 +49,7 @@ function Popup(props) {
           </form>
         </div>
 
-        <Login trigger={authType} setTrigger={setauthType} firstName={firstName} setfirstName={setfirstName} lastName={lastName} setlastName={setlastName} email={email} setEmail={setEmail} pass={passw} setPassw={setPassw} />
+        <Login trigger={authType} setTrigger={setauthType} fullName={fullName} setfullName={setfullName} email={email} setEmail={setEmail} pass={passw} setPassw={setPassw} role={role} setRole={setRole} />
       </div>
     </div>
   ) : "";

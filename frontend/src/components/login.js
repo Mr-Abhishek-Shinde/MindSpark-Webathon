@@ -10,14 +10,17 @@ function Login(props) {
 	const sendUserData = async (event) => {
 		event.preventDefault();
 
+		const fullname = event.target.fullName.value
+
 		const user = {
-			"first_name": event.target.firstName.value,
-			"last_name": event.target.lastName.value,
+			"first_name": fullname.split(" ")[0],
+			"last_name": fullname.split(" ").slice(-1)[0],
 			"email": event.target.email.value,
 			"password": event.target.passw.value,
+			"role": props.role
 		}
 
-		const response = await fetch("http://localhost:8000/users/new/", {
+		const response = await fetch("http://localhost:8000/api/users/new/", {
 			method: "POST",
 			mode: 'cors',
 			headers: {
@@ -31,7 +34,10 @@ function Login(props) {
 		if (data !== "existing_user") {
 			notifyRegistered();
 		}
-		else{
+		else if (data == "no_role") {
+			notifyRole();
+		}
+		else {
 			notifyExistingUser();
 		}
 	}
@@ -44,7 +50,7 @@ function Login(props) {
 			"password": event.target.passw.value,
 		}
 
-		const response = await fetch("http://localhost:8000/users/login/", {
+		const response = await fetch("http://localhost:8000/api/users/login/", {
 			method: "POST",
 			mode: 'cors',
 			headers: {
@@ -58,18 +64,14 @@ function Login(props) {
 		setCookie('user', data, { path: '/' });
 	}
 
-	const [authType, setauthType] = useState('user');
-	const [registered, setregistered] = useState(false);
-
-	const handleChange = (event) => {
-		setauthType(event.target.value);
-	}
-
 	const notifyRegistered = () => {
 		toast.success("Registered Successfully!");
 	}
 	const notifyExistingUser = () => {
 		toast.warning("You have already registered! Please login to continue.");
+	}
+	const notifyRole = () => {
+		toast.warning("Please select a role.");
 	}
 
 	return (props.trigger) ? (
@@ -93,30 +95,25 @@ function Login(props) {
 		<div className="login">
 			<form className="register-body" onSubmit={sendUserData}>
 				<div className="input-section">
-					<select value={authType} onChange={handleChange}>
-						<option value="volvo">User</option>
-						<option value="saab">Innovation Champion</option>
-						<option value="mercedes">Admin</option>
-					</select>
+					<input type="text" name="fullName" id="fullName" placeholder="Full Name*" required="true" value={props.fullName} onChange={(e) => props.setfullName(e.target.value)} />
 				</div>
 				<div className="input-section">
-					{/* <i className="fas fa-envelope"></i> */}
-					<input type="text" name="firstName" id="firstName" placeholder="First Name*" required="true" value={props.firstName} onChange={(e) => props.setfirstName(e.target.value)} />
-				</div>
-				<div className="input-section">
-					{/* <i className="fas fa-envelope"></i> */}
-					<input type="text" name="lastName" id="lastName" placeholder="Last Name*" required="true" value={props.lastName} onChange={(e) => props.setlastName(e.target.value)} />
-				</div>
-				<div className="input-section">
-					{/* <i className="fas fa-envelope"></i> */}
 					<input type="email" name="email" id="email" placeholder="Email*" required="true" value={props.email} onChange={(e) => props.setEmail(e.target.value)} />
 				</div>
 				<div className="input-section">
-					{/* <i className="fas fa-lock"></i> */}
 					<input type="password" name="passw" id="passw" placeholder="Password*" required="true" value={props.passw} onChange={(e) => props.setPassw(e.target.value)} />
+				</div>
+				<div className="input-section">
+					<select value={props.role} onChange={(e) => props.setRole(e.target.value)}>
+						<option selected="true">Choose Role</option>
+						<option value="ideator">Ideator</option>
+						<option value="innovation_champion">Innovation Champion</option>
+						<option value="admin">Admin</option>
+					</select>
 				</div>
 				<p id="registered" onClick={() => props.setTrigger(true)}>Already registered?</p>
 				<button className="btn btn-action" id="btn-register">Register</button>
+
 			</form>
 			<ToastContainer />
 		</div>

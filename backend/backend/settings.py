@@ -17,7 +17,6 @@ INSTALLED_APPS = [
 
     # Making backend aware of the api app
     'api.apps.ApiConfig',
-    'users.apps.UsersConfig',
 
     # Django REST Framework
     'rest_framework',

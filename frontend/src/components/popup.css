@@ -82,7 +82,7 @@
 
 .login-body, .register-body {
     width: 100%;
-    height: 350px;
+    height: 425px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -108,9 +108,17 @@
 .input-section input{
     width: 55%;
 }
+
 .input-section:first-child {
     margin-top: 20px;
 }
+
+.input-section select{
+    width: 55%;
+    padding: 10px 15px;
+    margin-top: 10px;
+}
+
 input, .btn {
     width: 150px;
     padding: 10px 15px;
