@@ -1,0 +1,16 @@
+.details-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 60px;
+}
+.imageContainer {
+margin: 10px;
+}
+.imageContainer img {
+    width: 40vw;
+    object-fit: contain;
+}
+.info-container{
+padding: 20px;
+}
