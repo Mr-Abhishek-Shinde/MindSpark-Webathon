@@ -2,6 +2,7 @@ import { React, useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useCookies } from 'react-cookie';
+import { NavLink, Outlet } from "react-router-dom";
 
 function Login(props) {
 
@@ -31,7 +32,7 @@ function Login(props) {
 		if (data !== "existing_user") {
 			notifyRegistered();
 		}
-		else{
+		else {
 			notifyExistingUser();
 		}
 	}
@@ -55,6 +56,13 @@ function Login(props) {
 		})
 		const data = await response.json()
 		console.log(data)
+		if (data !== "invalid") {
+			notifyLogin();
+		}
+		else {
+			notifyIncorrectDetails();
+		}
+
 		setCookie('user', data, { path: '/' });
 	}
 
@@ -65,6 +73,12 @@ function Login(props) {
 		setauthType(event.target.value);
 	}
 
+	const notifyLogin = () => {
+		toast.success("Logged in Successfully!");
+	}
+	const notifyIncorrectDetails = () => {
+		toast.warning("Please enter the correct details or register if not registered.");
+	}
 	const notifyRegistered = () => {
 		toast.success("Registered Successfully!");
 	}
@@ -84,7 +98,12 @@ function Login(props) {
 					<input type="password" name="passw" id="passw" placeholder="Password*" required="true" value={props.passw} onChange={(e) => props.setPassw(e.target.value)} />
 				</div>
 				<p id="forgot-password">Forgot your password?</p>
-				<button className="btn" id="btn-login">Login</button>
+				if(data.is_active){
+					<NavLink end to='/user' >
+						<button className="btn" id="btn-login">Login</button>
+					</NavLink>
+				}
+					<Outlet/>
 			</form>
 		</div>
 

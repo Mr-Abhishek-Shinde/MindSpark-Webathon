@@ -20,9 +20,9 @@ function IdeaForm(props) {
           height: "80vh",
           paddingTop: "15px",
         }}>
-          {/* <div className="closeBtn2">
-            <button className="closeBtn" onClick={props.setTrigger(false)}>Close</button>
-          </div> */}
+          <div className="closeBtn2">
+            {/* <button className="closeBtn" onClick={props.setTrigger(false)}>Close</button> */}
+          </div>
           <LinearStepper />
         </Paper>
       </Container>
