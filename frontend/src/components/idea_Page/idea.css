@@ -13,9 +13,10 @@
     padding: 10px;
 }
 
-.wrapper{
+.idea-wrapper{
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid #777;
 }
 
 ul{
@@ -30,4 +31,56 @@ li{
 
 .delete{
     color: red;
+}
+
+#idea-image{
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    margin-left: 0;
+}
+
+.user-info{
+    display: flex;
+    margin: 10px;
+    align-items: center;
+}
+
+.wrap-2{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #777;
+}
+
+.son{
+    padding: 0 4%;
+}
+
+.button-wrap{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+.idea-btn{
+    padding: 2px 12px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 2px;
+    color: white;
+}
+
+.accept{
+    background-color: green;
+}
+
+.hold{
+    background-color: olive;
+}
+
+.reject{
+    background-color: red;
 }
