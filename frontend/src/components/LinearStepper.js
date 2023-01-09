@@ -41,6 +41,7 @@ const BasicForm = () => {
                         variant="outlined"
                         placeholder="Enter Your First Name"
                         fullWidth
+                        required
                         margin="normal"
                         size="small"
                         {...field}
@@ -58,6 +59,7 @@ const BasicForm = () => {
                         variant="outlined"
                         placeholder="Enter Your Last Name"
                         fullWidth
+                        required
                         margin="normal"
                         size="small"
                         {...field}
@@ -75,6 +77,7 @@ const BasicForm = () => {
                         variant="outlined"
                         placeholder="Enter Your Nick Name"
                         fullWidth
+                        required
                         margin="normal"
                         size="small"
                         {...field}
@@ -99,6 +102,7 @@ const PaymentForm = () => {
                         variant="outlined"
                         placeholder="Enter Your Card Number"
                         fullWidth
+                        required
                         margin="normal"
                         size="small"
                         {...field}
@@ -115,6 +119,7 @@ const PaymentForm = () => {
                         variant="outlined"
                         placeholder="Enter Your Card Month"
                         fullWidth
+                        required
                         margin="normal"
                         size="small"
                         {...field}
@@ -131,6 +136,7 @@ const PaymentForm = () => {
                         variant="outlined"
                         placeholder="Enter Your Card Year"
                         fullWidth
+                        required
                         margin="normal"
                         size="small"
                         {...field}
