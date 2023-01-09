@@ -3,7 +3,7 @@ import './popup.css'
 import Login from './login'
 
 function Popup(props) {
-  const [authType, setauthType] = useState(true);
+  const [authType, setauthType] = useState(true); 
 
   const [firstName, setfirstName] = useState("");
   const [lastName, setlastName] = useState("");

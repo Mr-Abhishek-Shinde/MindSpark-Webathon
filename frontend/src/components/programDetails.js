@@ -7,9 +7,11 @@ import { Button } from '@mui/material';
 
 
 
-function ProgramDetails() {
-  return (
+function ProgramDetails(props) {
+  return ( props.trigger)?(
+    <div className="details-container-outer">
     <div className="details-container">
+    <button className="closeBtn3" onClick={() => props.setTrigger(false) }>Close</button>
       <div className="image-container">
         <img src={cardImg} alt="" />
       </div>
@@ -40,8 +42,9 @@ function ProgramDetails() {
         }}>Apply</Button>
       </div>
     </div>
+    </div>
 
-  )
+  ):''
 }
 
 export default ProgramDetails;

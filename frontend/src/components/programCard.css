@@ -23,7 +23,7 @@
     justify-content: flex-start;
     flex-direction: column;
     margin: 0px 30px;
-    z-index: -1;
+    /* z-index: -1; */
 }
 .wrapper .card img{
     height: 50%;
