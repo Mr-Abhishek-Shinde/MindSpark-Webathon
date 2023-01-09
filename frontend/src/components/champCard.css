@@ -23,7 +23,7 @@
     justify-content: center;
 }
 
-.card{
+.cardContainer .card{
     width: 300px;
     height: 320px;
     background-color: white;
@@ -38,19 +38,19 @@
     z-index: -1;
 }
 
-.card img{
-    width: 170px;
+.cardContainer .card img{
+    width: 60%;
     height: 170px;
     margin-bottom: 30px;
 }
 
-.card h4{
+.cardContainer .card h4{
     color: black;}
 
-.card h5{
+.cardContainer .card h5{
     color: red;
 }
 
-.card h6{
+.cardContainer .card h6{
     color: rgba(25, 25, 25, 0.918);
 }

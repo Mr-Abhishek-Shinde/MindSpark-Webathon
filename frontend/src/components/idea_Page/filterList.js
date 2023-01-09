@@ -1,12 +1,13 @@
 import React from 'react'
+import './filterlist.css'
 
 function FilterList() {
   return (
-    <div>
-        <h1>Showing 5 applications</h1>
-        <span>Clear All</span>
-        <span>Application Stage</span>
-        <span>Application Input</span>
+    <div className='filter-list'>
+        <h6>Showing 5 applications</h6>
+        <span className='filter'>Clear All</span>
+        <span className='filter'>Application Stage</span>
+        <span className='filter'>Application Input</span>
     </div>
   )
 }

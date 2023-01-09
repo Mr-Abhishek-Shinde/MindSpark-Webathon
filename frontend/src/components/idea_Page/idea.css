@@ -1,0 +1,33 @@
+.wrapper{
+    display: flex;
+}
+
+.check{
+    width: 20px;
+}
+
+.idea-container{
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 10px 15px;
+    padding: 10px;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+ul{
+    display: flex;
+    list-style: none;
+}
+
+li{
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.delete{
+    color: red;
+}
