@@ -1,6 +1,9 @@
 import React from 'react';
+import { useCookies } from 'react-cookie';
 
 function Login(props) {
+
+	const [cookies, setCookie, removeCookie] = useCookies(['user']);
 
 	const sendUserData = async (event) => {
 		event.preventDefault();
@@ -26,10 +29,33 @@ function Login(props) {
 
 	}
 
+	const loginUser = async (event) => {
+		event.preventDefault();
+
+		const user = {
+			"email": event.target.email.value,
+			"password": event.target.passw.value,
+		}
+
+		const response = await fetch("http://localhost:8000/users/login/", {
+			method: "POST",
+			mode: 'cors',
+			headers: {
+				'Content-Type': 'application/json'
+				// 'Content-Type': 'application/x-www-form-urlencoded',
+			},
+			body: JSON.stringify(user)
+		})
+		const data = await response.json()
+		console.log(data)
+		setCookie('user', data, { path: '/' });
+
+	}
+
 
 	return (props.trigger) ? (
 		<div className="login">
-			<form className="login-body">
+			<form className="login-body" onSubmit={loginUser}>
 				<div className="input-section">
 					{/* <i className="fas fa-user"></i> */}
 					<input type="email" name="email" id="email" placeholder="Email" value={props.email} onChange={(e) => props.setEmail(e.target.value)} />

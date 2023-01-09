@@ -1,9 +1,9 @@
 # Setting Up Backend
-
 ## Run these commands in main directory
 ### `pip install virtualenv`
+### `virtualenv env`
 ### `.\env\Scripts\activate`
-### `pip install django djangorestframework django-cors-headers`
+### `pip install -r requirements.txt`
 ### `cd .\backend\`
 ### `python manage.py runserver`
 
