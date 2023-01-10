@@ -1,7 +1,7 @@
 .ideaFormContainer{
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 45vh;
+    height: 60vh;
 }
 
 .ideaFormContainer input[type="text"],
@@ -12,3 +12,11 @@
     border: 1.5px solid #ccc;
     margin: 6px;
 }
+
+.ideaFormContainer::-webkit-scrollbar {
+    display: none;
+}
+.MuiBox-root-2{
+    height: 90% !important;
+}
+
