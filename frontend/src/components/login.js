@@ -5,7 +5,7 @@ import { useCookies } from 'react-cookie';
 import { NavLink, Outlet } from "react-router-dom";
 
 function Login(props) {
-
+	var data;
 	const [cookies, setCookie, removeCookie] = useCookies(['user']);
 
 	const sendUserData = async (event) => {
@@ -57,7 +57,7 @@ function Login(props) {
 			},
 			body: JSON.stringify(user)
 		})
-		const data = await response.json()
+		data = await response.json()
 		console.log(data)
 		if (data !== "invalid") {
 			notifyLogin();
@@ -104,7 +104,7 @@ function Login(props) {
 					<input type="password" name="passw" id="passw" placeholder="Password*" required="true" value={props.passw} onChange={(e) => props.setPassw(e.target.value)} />
 				</div>
 				<p id="forgot-password">Forgot your password?</p>
-				if(data.is_active){
+				if(data.role == "user"){
 					<NavLink end to='/user' >
 						<button className="btn" id="btn-login">Login</button>
 					</NavLink>
