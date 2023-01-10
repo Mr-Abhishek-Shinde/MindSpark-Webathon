@@ -75,3 +75,7 @@
 .reject{
     background-color: red;
 }
+
+.input-section2{
+    display: none;
+}
