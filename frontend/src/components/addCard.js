@@ -21,6 +21,7 @@ const BasicForm = () => {
 
     return (
         <>
+            {/* <div className="add-container"></div> */}
             <div className="ideaFormContainer">
             <p>Title: <input type="text" name="first_name" placeholder="Enter First Name" /></p>
             <p>Sub-title: <input type="text" name="last_name" placeholder="Enter Last Name" /></p>
