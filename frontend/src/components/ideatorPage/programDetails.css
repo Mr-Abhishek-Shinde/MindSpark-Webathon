@@ -23,6 +23,7 @@
     margin: auto;
     justify-content: center;
     align-items: center;
+    border-radius: 20px;
     border: 2px solid black;
 }
 
@@ -52,12 +53,16 @@ padding: 10px 30px;
     border: 1px solid grey;
     border-radius: 10px;
 }
-button{
-    margin: 15px 0 !important;
-}
+
 
 .closeBtn3{
     position: relative;
     top: 5px;
     right: 5px;
+}
+.info-container button{
+    margin: 10px !important;
+}
+.info-container a{
+    text-decoration: none;
 }
