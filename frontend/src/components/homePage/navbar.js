@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Popup from './popup'
 import './navbar.css';
+import Logo from './images/logo.png'
 
 
 function Navbar() {
@@ -10,6 +11,7 @@ function Navbar() {
     return (
         <div className="navbar">
             {/* <div className="loginBtn" onClick={() => setideaForm(true)}>Apply</div> */}
+            <img src={Logo} style={{"height": "80%"}} alt="" />
             <div className="loginBtn" onClick={() => setbtnPopup(true)}>Login</div>
             <Popup trigger={btnPopup} setTrigger={setbtnPopup} />
             {/* <IdeaForm trigger={ideaForm} setTrigger={setideaForm} /> */}
