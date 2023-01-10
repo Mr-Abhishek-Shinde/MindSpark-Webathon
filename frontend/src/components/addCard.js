@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './linearStepper.css'
+import './ideatorPage/linearStepper.css'
 import { Typography, Button, Stepper, Step, StepLabel } from "@material-ui/core";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -22,14 +22,17 @@ const BasicForm = () => {
     return (
         <>
             <div className="ideaFormContainer">
-            <p>First Name: <input type="text" name="first_name" placeholder="Enter First Name" /></p>
-            <p>Last Name: <input type="text" name="last_name" placeholder="Enter Last Name" /></p>
-            <p>Your Email: <input type="email" name="email" id="email" placeholder="Valid Email Address" /></p>
-            <p>Phone Number: <input type="text" name="phone" id="ph" placeholder="Enter Phone No." maxlength="10" /></p>
+            <p>Title: <input type="text" name="first_name" placeholder="Enter First Name" /></p>
+            <p>Sub-title: <input type="text" name="last_name" placeholder="Enter Last Name" /></p>
+            <p>Start Date: <input type="date" name="st-date" id="st-date" placeholder="Start Date" /></p>
+            <p>End Date: <input type="date" name="end-date" id="end-date" placeholder="End Date" /></p>
+            <p>Submission Date: <input type="date" name="sub-date" id="sub-date" placeholder="End Date" /></p>
+
+            {/* <p>Phone Number: <input type="text" name="phone" id="ph" placeholder="Enter Phone No." maxlength="10" /></p>
             <p>Gender: <input type="text" name="gender" id="gender" placeholder="" /></p>
             <p>Age: <input type="number" name="age" id="age" placeholder="Enter Age" /></p>
             <p>Current Industry: <input type="text" name="industry" placeholder="Enter Your Industry Name" /></p>
-            <p>Total years of experience: <input type="number" name="exp" id="exp" placeholder="in years"/></p>
+            <p>Total years of experience: <input type="number" name="exp" id="exp" placeholder="in years"/></p> */}
             </div>
         </>
     );

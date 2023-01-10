@@ -47,6 +47,7 @@ function ProgramCard(props) {
     <>
       <div id="wrapper" className="wrapper" >
 
+      <h2>BU PROGRAMS</h2>  
 
       {progNames.map((prog) => {return <div className="card">
           <img src={cardImg} alt="" />

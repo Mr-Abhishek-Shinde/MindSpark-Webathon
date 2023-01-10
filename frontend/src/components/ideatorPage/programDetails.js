@@ -8,7 +8,7 @@ import { NavLink,useNavigate} from "react-router-dom";
 
 
 function ProgramDetails() {
-  const history=useNavigate()
+  const navigate=useNavigate()
   return (
     <div className="details-container-outer">
       <div className="details-container">
@@ -41,7 +41,7 @@ function ProgramDetails() {
           <Button variant="contained" color="success">Apply</Button>
 					</NavLink>
           {/* <NavLink end to='/Ideator' > */}
-          <Button variant="contained" color="error" onClick={()=>history.goBack()}>close</Button>
+          <Button variant="contained" color="error" onClick={()=>navigate(-1)}>close</Button>
 					{/* </NavLink> */}
         </div>
       </div>
