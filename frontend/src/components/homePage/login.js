@@ -2,11 +2,18 @@ import { React, useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useCookies } from 'react-cookie';
-import { NavLink, Outlet } from "react-router-dom";
+import { useNavigate } from 'react-router';
+import { createBrowserHistory } from 'history';
+
 
 function Login(props) {
-	var data;
 	const [cookies, setCookie, removeCookie] = useCookies(['user']);
+	const navigate = useNavigate()
+	const history = createBrowserHistory();
+	// const [id, setId] = useState("");
+	// const [rolee, setRolee] = useState(props.role);
+	var id;
+	var rolee = props.role;
 
 	const sendUserData = async (event) => {
 		event.preventDefault();
@@ -57,29 +64,36 @@ function Login(props) {
 			},
 			body: JSON.stringify(user)
 		})
-		data = await response.json()
+		const data = await response.json()
 		console.log(data)
-		if (data !== "invalid_credentials") {
-			// notifyLogin();
-			console.log("done")
+		if (data == "invalid_credentials") {
+			notifyIncorrectDetails();
 		}
 		else {
-			console.log("not done")
-			// notifyIncorrectDetails();
+			// setId(data.id);
+			// setRolee(data.role);
+			id = data.id;
+			rolee = data.role;
+			notifyLogin();
 		}
+
 
 		setCookie('user', data, { path: '/' });
 	}
 
 	const [authType, setauthType] = useState('user');
-	const [registered, setregistered] = useState(false);
+	// const [registered, setregistered] = useState(false);
 
 	const handleChange = (event) => {
 		setauthType(event.target.value);
 	}
 
 	const notifyLogin = () => {
-		toast.success("Logged in Successfully!");
+		// toast.success("Logged in Successfully!");
+		console.log(rolee)
+		history.push(`/${rolee}/${id}`);
+
+		navigate(`/${rolee}/${id}`);
 	}
 	const notifyIncorrectDetails = () => {
 		toast.warning("Please enter the correct details or register if not registered.");
@@ -104,12 +118,8 @@ function Login(props) {
 				</div>
 				<p id="forgot-password" onClick={() => props.setTrigger(false)}>Haven't registered ?</p>
 				<button className="btn" id="btn-login">Login</button>
-				{/* if(data.is_active){
-					<NavLink end to='/ideator' >
-					</NavLink>
-				}
-				<Outlet /> */}
 			</form>
+			<ToastContainer />
 		</div>
 
 

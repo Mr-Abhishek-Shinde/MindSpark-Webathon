@@ -30,9 +30,9 @@ const App = () => {
 			<Router>
 				<Routes>
 					<Route path="/" element={<Home />} />
-					<Route path="/ideator" element={<Ideator />} />
-					<Route path="/innovation_champion" element={<Innovation_Champion />} />
-					<Route path="/submitIdea" element={<SubmitIdea />} />
+					<Route path="/ideator/:id" element={<Ideator />} />
+					<Route path="/innovation_champion/:id" element={<Innovation_Champion />} />
+					<Route path="/submitIdea/:id" element={<SubmitIdea />} />
 				</Routes>
 			</Router>
 		</>

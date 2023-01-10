@@ -10,7 +10,7 @@ function Navbar() {
     return (
         <div className="navbar">
             {/* <div className="loginBtn" onClick={() => setideaForm(true)}>Apply</div> */}
-            <div className="loginBtn" onClick={() => setbtnPopup(true)}>User Login</div>
+            <div className="loginBtn" onClick={() => setbtnPopup(true)}>Login</div>
             <Popup trigger={btnPopup} setTrigger={setbtnPopup} />
             {/* <IdeaForm trigger={ideaForm} setTrigger={setideaForm} /> */}
         </div>
