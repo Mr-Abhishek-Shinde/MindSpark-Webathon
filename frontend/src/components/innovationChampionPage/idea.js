@@ -27,77 +27,29 @@ function Idea({ idea }) {
     }
 
 
+function Idea({ idea }) {
     return (
         <>
             <div className='idea-container'>
-                <h3>{idea.title}</h3>
-                <div className='idea-wrapper'>
-                    <div>
-                        <input className='check' type="checkbox" /><span>Application Stage</span>
-                    </div>
-                    <div className='button-container'>
-                        <ul>
-                            <li>Invite</li>
-                            <li>Add/Edit</li>
-                            <li className='delete'>Delete</li>
-                            <li>Details</li>
-                        </ul>
-                    </div>
+                <div className='idea-top'>
+                    {idea.title}
                 </div>
-                <div className='wrap-2'>
-                    <div className='user-info son' >
-                        <img src={userImage} id="idea-image"></img>
-                        <div>
-                            <h6>{idea.email}</h6><span>{idea.id}</span>
-                        </div>
+                <div className='idea-wrapper'>
+                    {idea.body}
+                </div>
+                <div className='idea-footer'>
+                    <div className='author-img'>
+                        <img src='https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg'></img>
                     </div>
-                    <div className='son'>
-                        <h6>{idea.name}</h6>
-                        <h5>{idea.program_name}</h5>
-                    </div>
-                    <div className='son'>
-                        <h6>{idea.email}</h6>
-                    </div>
-                    <div className='son'>
-                        <h6>{idea.id}</h6>
+                    <div className='author-name'>
+                        {idea.author[0].name}
                     </div>
                 </div>
                 <div className='button-wrap'>
-                    <form className="accept-form" ref={form} onSubmit="">
-                        <div className="input-section2">
-                            <input type="text" name="fullName" id="fullName" placeholder="Full Name*" value={idea.name} />
-                        </div>
-                        <div className="input-section2">
-                            <input type="email" name="user_email" id="email" placeholder="Email*" value={idea.email} />
-                        </div>
-                        <div className="input-section2">
-                            <input type="text" name="idea" id="idea" placeholder="title*" value={idea.title} />
-                        </div>
-                        <div className="input-section2">
-                            <input type="text" name="idea" id="status" placeholder="title*" value="accepted" />
-                        </div>
-                        <span className='idea-btn accept' onClick={sendEmail}>Accept</span>
-                    </form>
-
+                    <span className='idea-btn accept'>Accept</span>
                     <span className='idea-btn hold'>Hold</span>
-                    
-                    <form className="accept-form" ref={form} onSubmit="">
-                        <div className="input-section2">
-                            <input type="text" name="fullName" id="fullName" placeholder="Full Name*" value={idea.name} />
-                        </div>
-                        <div className="input-section2">
-                            <input type="email" name="user_email" id="email" placeholder="Email*" value={idea.email} />
-                        </div>
-                        <div className="input-section2">
-                            <input type="text" name="idea" id="idea" placeholder="title*" value={idea.title} />
-                        </div>
-                        <div className="input-section2">
-                            <input type="text" name="idea" id="status" placeholder="title*" value="rejected" />
-                        </div>
-                        <span className='idea-btn reject' onClick={sendEmail}>Reject</span>
-                    </form>
+                    <span className='idea-btn reject'>Reject</span>
                 </div>
-                <ToastContainer/>
             </div>
         </>
     )

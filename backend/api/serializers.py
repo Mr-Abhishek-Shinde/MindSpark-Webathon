@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer
-from .models import Ideator, Innovation_Champion, Admin, Idea
+from .models import Ideator, Innovation_Champion, Admin, Idea, Program
 from django.contrib.auth.models import User
 
 class IdeatorSerializer(ModelSerializer):
@@ -25,4 +25,9 @@ class UserSerializer(ModelSerializer):
 class IdeaSerializer(ModelSerializer):
     class Meta:
         model = Idea
+        fields = '__all__'
+
+class ProgramSerializer(ModelSerializer):
+    class Meta:
+        model = Program
         fields = '__all__'

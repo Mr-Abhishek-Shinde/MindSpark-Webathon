@@ -4,11 +4,11 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import PersonIcon from '@mui/icons-material/Person';
 import './programDetails.css';
 import { Button } from '@mui/material';
-import { NavLink} from "react-router-dom";
+import { NavLink,useNavigate} from "react-router-dom";
 
 
 function ProgramDetails() {
-
+  const navigate=useNavigate()
   return (
     <div className="details-container-outer">
       <div className="details-container">
@@ -40,9 +40,9 @@ function ProgramDetails() {
           <NavLink end to='/submitIdea' >
           <Button variant="contained" color="success">Apply</Button>
 					</NavLink>
-          <NavLink end to='/Ideator' >
-          <Button variant="contained" color="error">close</Button>
-					</NavLink>
+          {/* <NavLink end to='/Ideator' > */}
+          <Button variant="contained" color="error" onClick={()=>navigate(-1)}>close</Button>
+					{/* </NavLink> */}
         </div>
       </div>
     </div>

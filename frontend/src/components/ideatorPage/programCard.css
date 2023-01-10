@@ -7,9 +7,15 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    border: 2px solid black;
-    margin: 0 auto;
-    margin-bottom: 30px;
+    /* border: 2px solid black; */
+    margin: 40px auto;
+    /* margin-bottom: 30px; */
+    overflow: hidden;
+}
+.wrapper h2{
+    font-size: 40px;
+    text-align: center;
+    width: 100%;
 }
 .wrapper .card{
     width: 350px;
@@ -31,9 +37,10 @@
 .wrapper .card img{
     height: 50%;
     width: 100%;
+    border: 1px solid black;
     /* max-width: 300px; */
     /* max-height: 300px; */
-    border-radius: 15px;
+    /* border-radius: 15px; */
 }
 .wrapper .card .tags span{
     background-color: rgb(236, 236, 236);
