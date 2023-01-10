@@ -105,7 +105,7 @@ function Login(props) {
 				</div>
 				<p id="forgot-password">Forgot your password?</p>
 				if(data.is_active){
-					<NavLink end to='/user' >
+					<NavLink end to='/ideator' >
 						<button className="btn" id="btn-login">Login</button>
 					</NavLink>
 				}
