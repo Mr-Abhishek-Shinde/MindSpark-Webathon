@@ -59,11 +59,13 @@ function Login(props) {
 		})
 		data = await response.json()
 		console.log(data)
-		if (data !== "invalid") {
-			notifyLogin();
+		if (data !== "invalid_credentials") {
+			// notifyLogin();
+			console.log("done")
 		}
 		else {
-			notifyIncorrectDetails();
+			console.log("not done")
+			// notifyIncorrectDetails();
 		}
 
 		setCookie('user', data, { path: '/' });
@@ -88,9 +90,6 @@ function Login(props) {
 	const notifyExistingUser = () => {
 		toast.warning("You have already registered! Please login to continue.");
 	}
-	const notifyRole = () => {
-		toast.warning("Please select a role.");
-	}
 
 	return (props.trigger) ? (
 		<div className="login">
@@ -103,13 +102,13 @@ function Login(props) {
 					{/* <i className="fas fa-lock"></i> */}
 					<input type="password" name="passw" id="passw" placeholder="Password*" required="true" value={props.passw} onChange={(e) => props.setPassw(e.target.value)} />
 				</div>
-				<p id="forgot-password">Forgot your password?</p>
-				if(data.is_active){
+				<p id="forgot-password" onClick={() => props.setTrigger(false)}>Haven't registered ?</p>
+				<button className="btn" id="btn-login">Login</button>
+				{/* if(data.is_active){
 					<NavLink end to='/ideator' >
-						<button className="btn" id="btn-login">Login</button>
 					</NavLink>
 				}
-				<Outlet />
+				<Outlet /> */}
 			</form>
 		</div>
 
@@ -127,9 +126,9 @@ function Login(props) {
 					<input type="password" name="passw" id="passw" placeholder="Password*" required="true" value={props.passw} onChange={(e) => props.setPassw(e.target.value)} />
 				</div>
 				<div className="input-section">
-					<select value={props.role} onChange={(e) => props.setRole(e.target.value)}>
-						<option selected="true">Choose Role</option>
-						<option value="ideator">Ideator</option>
+					<select value={props.role} onChange={(e) => props.setRole(e.target.value)} required="true">
+						{/* <option selected="true" value="norole">Choose Role</option> */}
+						<option selected="true" value="ideator">Ideator</option>
 						<option value="innovation_champion">Innovation Champion</option>
 						<option value="admin">Admin</option>
 					</select>
