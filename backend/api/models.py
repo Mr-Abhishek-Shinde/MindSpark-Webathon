@@ -46,8 +46,8 @@ class Idea(models.Model):
     title = models.CharField(max_length=30)
     body = models.TextField()
     program = models.ForeignKey(Program, on_delete=models.CASCADE, default=None)
-    image = models.CharField(max_length=200, default="https://i0.wp.com/t-artmagazine.com/wp-content/uploads/2021/04/vector-creator.png?fit=800%2C534&ssl=1")
-    author = models.ForeignKey(Ideator, on_delete=models.CASCADE, default=None)
+    image = models.TextField(default="https://images.ctfassets.net/d0t1b8j9k0xb/q874gZ95BsMs7F10yKYDR/03be7ed0c4fb18c0c3800b41c1c16541/Design_01_Is_the_Big_Tech_Art.jpg?fm=webp")
+    author = models.JSONField(encoder=None, decoder=None, default=dict, blank=True)
     created =  models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
