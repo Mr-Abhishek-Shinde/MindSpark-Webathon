@@ -26,8 +26,6 @@ function Idea({ idea }) {
         toast("Status email sent to ideator successfully!!");
     }
 
-
-function Idea({ idea }) {
     return (
         <>
             <div className='idea-container'>
@@ -55,4 +53,4 @@ function Idea({ idea }) {
     )
 }
 
-export default Idea
+export default Idea;
