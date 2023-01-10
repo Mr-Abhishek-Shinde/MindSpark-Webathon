@@ -3,6 +3,7 @@ import cardImg from '../../img/wallpaper.jpg';
 import './programCard.css'
 import ProgramDetails from './programDetails';
 import { Button } from '@material-ui/core';
+import { NavLink} from "react-router-dom";
 
 const progNames = [
   {
@@ -55,12 +56,15 @@ function ProgramCard(props) {
             {prog.tags.slice(0, 2).map((tag) => {return <span>{tag}</span>})}              
             <p>+{prog.tags.length-2} more</p>
           </div>
-          <Button variant="contained"  onClick={() => {setDetails(true)} }>View Details</Button>
+          <NavLink end to='/programDetails' >
+            <Button variant="contained"  onClick={() => {setDetails(true)} }>View Details</Button>
+					</NavLink>
+          
           {/* <button className="closeBtn" onClick={() => setDetails(true)}>View Details</button> */}
         </div>})}              
 
 
-        <div className="card">
+        {/* <div className="card">
           <img src={cardImg} alt="" />
           <p>3 interested</p>
           <h2> {progNames[0].name}</h2>
@@ -69,8 +73,7 @@ function ProgramCard(props) {
             <p>+2 more</p>
           </div>
           <Button variant="contained">View Details</Button>
-          {/* <button className="closeBtn" onClick={() => setDetails(true)}>View Details</button> */}
-        </div>
+        </div> */}
 
         {/* <div className="card">
           <img src={cardImg} alt="" />
@@ -95,7 +98,7 @@ function ProgramCard(props) {
         </div> */}
 
       </div>
-      <ProgramDetails trigger={details} setTrigger={setDetails} />
+      {/* <ProgramDetails trigger={details} setTrigger={setDetails} /> */}
     </>
   );
 }

@@ -8,11 +8,11 @@
     justify-content: center;
     flex-wrap: wrap;
     border: 2px solid black;
-    margin: auto;
+    margin: 0 auto;
     margin-bottom: 30px;
 }
 .wrapper .card{
-    width: 400px;
+    width: 350px;
     height: 450px;
     margin: 40px;
     border: 2px solid grey;
@@ -48,5 +48,9 @@
 }
 .card button{
     background-color: #e42300 !important;
+    color: white;
+}
 
+.card  a{
+    text-decoration: none !important;
 }
