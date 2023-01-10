@@ -6,8 +6,8 @@ from rest_framework.decorators import api_view
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 
-from .models import Ideator, Innovation_Champion, Admin, Idea
-from .serializers import IdeatorSerializer, UserSerializer, InnovationChampionSerializer, AdminSerializer, IdeaSerializer
+from .models import Ideator, Innovation_Champion, Admin, Idea, Program
+from .serializers import IdeatorSerializer, UserSerializer, InnovationChampionSerializer, AdminSerializer, IdeaSerializer, ProgramSerializer
 
 # Create your views here.
 
@@ -206,4 +206,10 @@ def loginUser(request):
 def getIdeas(request):
     ideas = Idea.objects.all()
     serializer = IdeaSerializer(ideas, many=True)
+    return Response(serializer.data)
+
+@api_view(["GET"])
+def getPrograms(request):
+    programs = Program.objects.all()
+    serializer = ProgramSerializer(programs, many=True)
     return Response(serializer.data)
