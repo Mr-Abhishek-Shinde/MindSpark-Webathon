@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import cardImg from '../img/wallpaper.jpg';
+import cardImg from '../../img/wallpaper.jpg';
 import './programCard.css'
 // import { Button } from "@material-ui/core";
 import ProgramDetails from './programDetails';
@@ -26,7 +26,7 @@ function ProgramCard(props) {
             <p>+2 more</p>
           </div>
           {/* <Button variant="contained">View Details</Button> */}
-        <button className="closeBtn"  onClick={() => setDetails(true)}>Apply</button>
+          <button className="closeBtn" onClick={() => setDetails(true)}>Apply</button>
         </div>
 
         <div className="card">
@@ -39,7 +39,7 @@ function ProgramCard(props) {
             <p>+2 more</p>
           </div>
           {/* <Button variant="contained">View Details</Button> */}
-        <button className="closeBtn"  onClick={() =>setDetails(true)}>Apply</button>
+          <button className="closeBtn" onClick={() => setDetails(true)}>Apply</button>
         </div>
 
         <div className="card">
@@ -52,8 +52,8 @@ function ProgramCard(props) {
             <p>+2 more</p>
           </div>
           {/* <Button variant="contained" onClick={() => showDetails(true)} sx={{cursor: "pointer"}}>View Details</Button> */}
-        {/* <button className="closeBtn"  onClick={() =>{setDetails(true); makeBlur()}}>Apply</button> */}
-        <button className="closeBtn"  onClick={() =>setDetails(true)}>Apply</button>
+          {/* <button className="closeBtn"  onClick={() =>{setDetails(true); makeBlur()}}>Apply</button> */}
+          <button className="closeBtn" onClick={() => setDetails(true)}>Apply</button>
 
         </div>
 

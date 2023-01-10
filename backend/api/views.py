@@ -39,31 +39,40 @@ def getRoutes(request):
                 'method': 'DELETE',
                 'description': 'Deletes and exiting idea'
             },
-
             {
+                'Endpoint': '/users/',
+                'method': 'GET',
+                'description': 'Returns an array of users'
+            },
+            {
+                'Endpoint': '/users/id',
+                'method': 'GET',
+                'description': 'Returns a single users object'
+            },
+            {
+                'Endpoint': '/users/new/',
+                'method': 'POST',
+                'description': 'Creates new users with data sent in post request'
+            },
+            {
+                'Endpoint': '/users/id/update/',
+                'method': 'PUT',
+                'description': 'Creates an existing users with data sent in post request'
+            },
+            {
+                'Endpoint': '/users/id/delete/',
+                'method': 'DELETE',
+                'description': 'Deletes and exiting users'
+            },
+                        {
+                'Endpoint': '/users/login',
+                'method': 'POST',
+                'description': 'Logs in an user'
+            },
+                        {
                 'Endpoint': '/ideators/',
                 'method': 'GET',
-                'description': 'Returns an array of ideatorss'
-            },
-            {
-                'Endpoint': '/ideators/id',
-                'method': 'GET',
-                'description': 'Returns a single ideators object'
-            },
-            {
-                'Endpoint': '/ideators/create/',
-                'method': 'POST',
-                'description': 'Creates new ideators with data sent in post request'
-            },
-            {
-                'Endpoint': '/ideators/id/update/',
-                'method': 'PUT',
-                'description': 'Creates an existing ideators with data sent in post request'
-            },
-            {
-                'Endpoint': '/ideators/id/delete/',
-                'method': 'DELETE',
-                'description': 'Deletes and exiting ideators'
+                'description': 'Returns an array of ideators'
             },
         ]
     return Response(routes)

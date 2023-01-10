@@ -1,7 +1,7 @@
 import React from "react";
-import Home from "./components/home";
-import User from "./components/user";
-import Judge from "./components/judge";
+import Home from "./pages/home";
+import Ideator from "./pages/ideator";
+import Innovation_Champion from "./pages/innovationChampion"
 import {
 	BrowserRouter as Router,
 	Routes,
@@ -29,8 +29,8 @@ const App = () => {
 			<Router>
 				<Routes>
 					<Route path="/" element={<Home />} />
-					<Route path="/user" element={<User />} />
-					<Route path="/judge" element={<Judge />} />
+					<Route path="/ideator" element={<Ideator />} />
+					<Route path="/innovation_champion" element={<Innovation_Champion />} />
 				</Routes>
 			</Router>
 		</>
