@@ -6,8 +6,8 @@ from rest_framework.decorators import api_view
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 
-from .models import Ideator, Innovation_Champion, Admin
-from .serializers import IdeatorSerializer, UserSerializer, InnovationChampionSerializer, AdminSerializer
+from .models import Ideator, Innovation_Champion, Admin, Idea
+from .serializers import IdeatorSerializer, UserSerializer, InnovationChampionSerializer, AdminSerializer, IdeaSerializer
 
 # Create your views here.
 
@@ -15,27 +15,27 @@ from .serializers import IdeatorSerializer, UserSerializer, InnovationChampionSe
 def getRoutes(request):
     routes = [
             {
-                'Endpoint': '/idea/',
+                'Endpoint': '/ideas/',
                 'method': 'GET',
                 'description': 'Returns an array of ideas'
             },
             {
-                'Endpoint': '/idea/id',
+                'Endpoint': '/ideas/id',
                 'method': 'GET',
                 'description': 'Returns a single idea object'
             },
             {
-                'Endpoint': '/idea/create/',
+                'Endpoint': '/ideas/create/',
                 'method': 'POST',
                 'description': 'Creates new idea with data sent in post request'
             },
             {
-                'Endpoint': '/idea/id/update/',
+                'Endpoint': '/ideas/id/update/',
                 'method': 'PUT',
                 'description': 'Creates an existing idea with data sent in post request'
             },
             {
-                'Endpoint': '/idea/id/delete/',
+                'Endpoint': '/ideas/id/delete/',
                 'method': 'DELETE',
                 'description': 'Deletes and exiting idea'
             },
@@ -183,28 +183,27 @@ def createUser(request):
 def loginUser(request):
     username = request.data['email'].split("@")[0]
     password = request.data['password']
-    found_ideator = Ideator.objects.filter(username= username).first()
-    found_innovation_champion = Innovation_Champion.objects.filter(username= username).first()
-    found_admin = Admin.objects.filter(username= username).first()
+    user = authenticate(request, username=username, password=password)
 
-    if found_ideator:
-        serializer = IdeatorSerializer(found_ideator, many=False)
-        return Response(serializer.data)
-    elif found_innovation_champion:
-        serializer = InnovationChampionSerializer(found_innovation_champion, many=False)
-        return Response(serializer.data)
-    elif found_admin:
-        serializer = AdminSerializer(found_admin, many=False)
-        return Response(serializer.data)
-    
-    return Response("invalid_credentials")
+    if user:
+        found_ideator = Ideator.objects.filter(username= username).first()
+        found_innovation_champion = Innovation_Champion.objects.filter(username= username).first()
+        found_admin = Admin.objects.filter(username= username).first()
 
-    # try:
-    #     user = authenticate(request, username=username, password=password)
-    #     if user:
-    #         serializer = UserSerializer(user, many=False)
-    #         return Response(serializer.data)
-    #     else:
-    #         return Response("invalid_credentials")
-    # except:
-    #     return Response("invalid_credentials")
+        if found_ideator:
+            serializer = IdeatorSerializer(found_ideator, many=False)
+            return Response(serializer.data)
+        elif found_innovation_champion:
+            serializer = InnovationChampionSerializer(found_innovation_champion, many=False)
+            return Response(serializer.data)
+        elif found_admin:
+            serializer = AdminSerializer(found_admin, many=False)
+            return Response(serializer.data)
+    else:
+        return Response("invalid_credentials")
+
+@api_view(["GET"])
+def getIdeas(request):
+    ideas = Idea.objects.all()
+    serializer = IdeaSerializer(ideas, many=True)
+    return Response(serializer.data)

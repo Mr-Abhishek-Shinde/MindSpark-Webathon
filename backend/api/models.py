@@ -19,7 +19,7 @@ class Ideator(models.Model):
 
 class Idea(models.Model):
     title = models.CharField(max_length=30)
-    body = models.CharField(max_length=150)
+    body = models.TextField()
     author = models.ForeignKey(Ideator, on_delete=models.CASCADE, default=None)
     created =  models.DateTimeField(auto_now_add=True)
 
