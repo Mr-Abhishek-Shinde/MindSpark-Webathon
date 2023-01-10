@@ -1,9 +1,10 @@
-import { React, useState, useEffect } from 'react';
+import { React, useState, useRef } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router';
 import { createBrowserHistory } from 'history';
+import emailjs from '@emailjs/browser';
 
 
 function Login(props) {
@@ -100,10 +101,30 @@ function Login(props) {
 	}
 	const notifyRegistered = () => {
 		toast.success("Registered Successfully!");
+		sendEmail();
 	}
 	const notifyExistingUser = () => {
 		toast.warning("You have already registered! Please login to continue.");
 	}
+
+    const form = useRef();
+
+	const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_3arnah3', 'template_4do962o', form.current, 'P1aYXn6qkhPDWCSkG')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+
+		notify();
+    };
+
+    const notify = () => {
+        toast("Message sent successfully!!");
+    }
 
 	return (props.trigger) ? (
 		<div className="login">
@@ -125,7 +146,7 @@ function Login(props) {
 
 	) : (
 		<div className="login">
-			<form className="register-body" onSubmit={sendUserData}>
+			<form className="register-body" ref={form} onSubmit={sendUserData}>
 				<div className="input-section">
 					<input type="text" name="fullName" id="fullName" placeholder="Full Name*" required="true" value={props.fullName} onChange={(e) => props.setfullName(e.target.value)} />
 				</div>
