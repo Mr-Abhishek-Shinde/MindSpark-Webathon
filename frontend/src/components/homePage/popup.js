@@ -8,7 +8,7 @@ function Popup(props) {
   const [fullName, setfullName] = useState("");
   const [email, setEmail] = useState("");
   const [passw, setPassw] = useState("");
-  const [role, setRole] = useState("");
+  const [role, setRole] = useState("ideator");
   const [dataInput, setDataInput] = useState("");
 
   const submitThis = () => {

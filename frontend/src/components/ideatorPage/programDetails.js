@@ -17,7 +17,7 @@ function ProgramDetails(props) {
           <img src={cardImg} alt="" />
         </div>
         <div className="info-container">
-          <h3>Bridgestone- Marketing</h3>
+          <h3>prog.name</h3>
           <p>Idea submission for Marketing dept.</p>
           <div className="pro-duration">
             <h4>Program Duration Check Timeline </h4>
@@ -39,7 +39,7 @@ function ProgramDetails(props) {
             <span>#Test</span>
             +2 more</div>
           <NavLink end to='/submitIdea' >
-          <Button variant="contained" color="primary">Apply</Button>
+          <Button variant="contained" color="success">Apply</Button>
 						{/* <button className="btn" id="btn-login">Login</button> */}
 					</NavLink>
         </div>

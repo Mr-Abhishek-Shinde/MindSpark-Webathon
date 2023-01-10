@@ -94,6 +94,7 @@ function Login(props) {
 
 	return (props.trigger) ? (
 		<div className="login">
+				<ToastContainer />
 			<form className="login-body" onSubmit={loginUser}>
 				<div className="input-section">
 					{/* <i className="fas fa-user"></i> */}
@@ -104,18 +105,19 @@ function Login(props) {
 					<input type="password" name="passw" id="passw" placeholder="Password*" required="true" value={props.passw} onChange={(e) => props.setPassw(e.target.value)} />
 				</div>
 				<p id="forgot-password">Forgot your password?</p>
-				if(data.role == "user"){
+				<button className="btn" id="btn-login">Login</button>
+				{/* if(data.role == "user"){
 					<NavLink end to='/user' >
-						<button className="btn" id="btn-login">Login</button>
 					</NavLink>
-				}
-				<Outlet />
+				} */}
+				{/* <Outlet /> */}
 			</form>
 		</div>
 
 
 	) : (
 		<div className="login">
+			{/* <ToastContainer /> */}
 			<form className="register-body" onSubmit={sendUserData}>
 				<div className="input-section">
 					<input type="text" name="fullName" id="fullName" placeholder="Full Name*" required="true" value={props.fullName} onChange={(e) => props.setfullName(e.target.value)} />
@@ -138,7 +140,6 @@ function Login(props) {
 				<button className="btn btn-action" id="btn-register">Register</button>
 
 			</form>
-			<ToastContainer />
 		</div>
 	)
 

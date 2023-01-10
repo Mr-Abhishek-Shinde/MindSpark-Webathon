@@ -2,11 +2,18 @@ import { React, useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useCookies } from 'react-cookie';
-import { NavLink, Outlet } from "react-router-dom";
+import { useNavigate } from 'react-router';
+import { createBrowserHistory } from 'history';
+
 
 function Login(props) {
-	var data;
 	const [cookies, setCookie, removeCookie] = useCookies(['user']);
+	const navigate = useNavigate()
+	const history = createBrowserHistory();
+	// const [id, setId] = useState("");
+	// const [rolee, setRolee] = useState(props.role);
+	var id;
+	var rolee = props.role;
 
 	const sendUserData = async (event) => {
 		event.preventDefault();
@@ -57,27 +64,36 @@ function Login(props) {
 			},
 			body: JSON.stringify(user)
 		})
-		data = await response.json()
+		const data = await response.json()
 		console.log(data)
-		if (data !== "invalid") {
-			notifyLogin();
-		}
-		else {
+		if (data == "invalid_credentials") {
 			notifyIncorrectDetails();
 		}
+		else {
+			// setId(data.id);
+			// setRolee(data.role);
+			id = data.id;
+			rolee = data.role;
+			notifyLogin();
+		}
+
 
 		setCookie('user', data, { path: '/' });
 	}
 
 	const [authType, setauthType] = useState('user');
-	const [registered, setregistered] = useState(false);
+	// const [registered, setregistered] = useState(false);
 
 	const handleChange = (event) => {
 		setauthType(event.target.value);
 	}
 
 	const notifyLogin = () => {
-		toast.success("Logged in Successfully!");
+		// toast.success("Logged in Successfully!");
+		console.log(rolee)
+		history.push(`/${rolee}/${id}`);
+
+		navigate(`/${rolee}/${id}`);
 	}
 	const notifyIncorrectDetails = () => {
 		toast.warning("Please enter the correct details or register if not registered.");
@@ -87,9 +103,6 @@ function Login(props) {
 	}
 	const notifyExistingUser = () => {
 		toast.warning("You have already registered! Please login to continue.");
-	}
-	const notifyRole = () => {
-		toast.warning("Please select a role.");
 	}
 
 	return (props.trigger) ? (
@@ -103,14 +116,10 @@ function Login(props) {
 					{/* <i className="fas fa-lock"></i> */}
 					<input type="password" name="passw" id="passw" placeholder="Password*" required="true" value={props.passw} onChange={(e) => props.setPassw(e.target.value)} />
 				</div>
-				<p id="forgot-password">Forgot your password?</p>
-				if(data.is_active){
-					<NavLink end to='/ideator' >
-						<button className="btn" id="btn-login">Login</button>
-					</NavLink>
-				}
-				<Outlet />
+				<p id="forgot-password" onClick={() => props.setTrigger(false)}>Haven't registered ?</p>
+				<button className="btn" id="btn-login">Login</button>
 			</form>
+			<ToastContainer />
 		</div>
 
 
@@ -127,9 +136,9 @@ function Login(props) {
 					<input type="password" name="passw" id="passw" placeholder="Password*" required="true" value={props.passw} onChange={(e) => props.setPassw(e.target.value)} />
 				</div>
 				<div className="input-section">
-					<select value={props.role} onChange={(e) => props.setRole(e.target.value)}>
-						<option selected="true">Choose Role</option>
-						<option value="ideator">Ideator</option>
+					<select value={props.role} onChange={(e) => props.setRole(e.target.value)} required="true">
+						{/* <option selected="true" value="norole">Choose Role</option> */}
+						<option selected="true" value="ideator">Ideator</option>
 						<option value="innovation_champion">Innovation Champion</option>
 						<option value="admin">Admin</option>
 					</select>
