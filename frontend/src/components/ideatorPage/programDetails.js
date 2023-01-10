@@ -1,13 +1,14 @@
-import React from 'react'
+import {React, useState} from 'react'
 import cardImg from '../../img/wallpaper.jpg';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import PersonIcon from '@mui/icons-material/Person';
 import './programDetails.css';
 import { Button } from '@mui/material';
-
+import { NavLink} from "react-router-dom";
 
 
 function ProgramDetails(props) {
+
   return (props.trigger) ? (
     <div className="details-container-outer">
       <div className="details-container">
@@ -37,9 +38,10 @@ function ProgramDetails(props) {
             <span>#AICognitive</span>
             <span>#Test</span>
             +2 more</div>
-          <Button variant="contained" color="primary" onClick={() => {
-            alert('clicked');
-          }}>Apply</Button>
+          <NavLink end to='/submitIdea' >
+          <Button variant="contained" color="primary">Apply</Button>
+						{/* <button className="btn" id="btn-login">Login</button> */}
+					</NavLink>
         </div>
       </div>
     </div>

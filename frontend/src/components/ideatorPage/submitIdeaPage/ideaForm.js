@@ -3,9 +3,9 @@ import LinearStepper from "../LinearStepper";
 import { CssBaseline, Container, Paper, Box } from "@material-ui/core";
 import './ideaForm.css'
 
-function IdeaForm(props) {
+function IdeaForm() {
 
-  return (props.trigger) ? (
+  return (
     <>
       <CssBaseline />
       <Container component={Box} sx={{
@@ -20,14 +20,14 @@ function IdeaForm(props) {
           height: "80vh",
           paddingTop: "15px",
         }}>
-          <div className="closeBtn2">
-            {/* <button className="closeBtn" onClick={props.setTrigger(false)}>Close</button> */}
-          </div>
+          {/* <div className="closeBtn2">
+            <button className="closeBtn" onClick={props.setIdeaForm(false)}>Close</button>
+          </div> */}
           <LinearStepper />
         </Paper>
       </Container>
     </>
-  ) : ""
+  )
 }
 
 export default IdeaForm

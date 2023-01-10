@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
 function getSteps() {
     return [
         "Basic information",
-        "Payment",
+        "Idea Details",
     ];
 }
 const BasicForm = () => {
@@ -22,12 +22,12 @@ const BasicForm = () => {
     return (
         <>
             <div className="ideaFormContainer">
-            <p>First Name: <input type="text" name="first_name" placeholder="Enter First Name" required="true"/></p>
-            <p>Last Name: <input type="text" name="last_name" placeholder="Enter Last Name" required="true"/></p>
-            <p>Your Email: <input type="email" name="email" id="email" placeholder="Valid Email Address" required="true"/></p>
-            <p>Phone Number: <input type="text" name="phone" id="ph" placeholder="Enter Phone No." maxlength="10" required="true"/></p>
-            <p>Gender: <input type="text" name="gender" id="gender" placeholder="" required="true"/></p>
-            <p>Age: <input type="number" name="age" id="age" placeholder="Enter Age" required="true"/></p>
+            <p>First Name: <input type="text" name="first_name" placeholder="Enter First Name" /></p>
+            <p>Last Name: <input type="text" name="last_name" placeholder="Enter Last Name" /></p>
+            <p>Your Email: <input type="email" name="email" id="email" placeholder="Valid Email Address" /></p>
+            <p>Phone Number: <input type="text" name="phone" id="ph" placeholder="Enter Phone No." maxlength="10" /></p>
+            <p>Gender: <input type="text" name="gender" id="gender" placeholder="" /></p>
+            <p>Age: <input type="number" name="age" id="age" placeholder="Enter Age" /></p>
             <p>Current Industry: <input type="text" name="industry" placeholder="Enter Your Industry Name" /></p>
             <p>Total years of experience: <input type="number" name="exp" id="exp" placeholder="in years"/></p>
             </div>

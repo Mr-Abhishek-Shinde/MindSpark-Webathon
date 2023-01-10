@@ -5,7 +5,7 @@ import { useCookies } from 'react-cookie';
 import { NavLink, Outlet } from "react-router-dom";
 
 function Login(props) {
-
+	var data;
 	const [cookies, setCookie, removeCookie] = useCookies(['user']);
 
 	const sendUserData = async (event) => {
@@ -57,7 +57,7 @@ function Login(props) {
 			},
 			body: JSON.stringify(user)
 		})
-		const data = await response.json()
+		data = await response.json()
 		console.log(data)
 		if (data !== "invalid") {
 			notifyLogin();

@@ -1,12 +1,6 @@
 import React from 'react';
 import '../components/homePage/home.css';
 import Navbar from "../components/homePage/navbar";
-// import ChampCard from "../components/championCard";
-// import IdeaList from './idea_Page/ideaList';
-// import ProgramCard from "../components/programCard";
-// import ProgramDetails from '../components/programDetails';
-
-
 
 export default function Home() {
 
