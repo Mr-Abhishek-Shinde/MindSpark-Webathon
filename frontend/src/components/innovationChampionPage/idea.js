@@ -2,11 +2,11 @@ import React from 'react'
 import './idea.css'
 import userImage from "../../img/userImage.png"
 
-function Idea() {
+function Idea({idea}) {
   return (
     <>
     <div className='idea-container'>
-        <h3>Title</h3>
+        <h3>{idea.title}</h3>
         <div className='idea-wrapper'>
             <div>
                 <input className='check' type = "checkbox"/><span>Application Stage</span>
@@ -24,18 +24,18 @@ function Idea() {
             <div className='user-info son' >
                 <img src={userImage} id="idea-image"></img>
                 <div>
-                    <h6>email</h6><span>112103134</span>
+                    <h6>{idea.email}</h6><span>{idea.id}</span>
                 </div>
             </div>
             <div className='son'>
-                <h6>Name</h6>
-                <h5>Program Name</h5>
+                <h6>{idea.name}</h6>
+                <h5>{idea.program_name}</h5>
             </div>
             <div className='son'>
-                <h6>Email</h6>
+                <h6>{idea.email}</h6>
             </div>
             <div className='son'>
-                <h6>Id</h6>
+                <h6>{idea.id}</h6>
             </div>
         </div>
         <div className='button-wrap'>

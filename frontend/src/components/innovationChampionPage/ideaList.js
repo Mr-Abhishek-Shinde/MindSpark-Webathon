@@ -1,13 +1,11 @@
-import React from 'react'
+import { React } from 'react'
 import Idea from './idea'
-import FilterList from './filterList'
 
-function IdeaList() {
+function IdeaList({ ideas }) {
   return (
-    <>
-      <FilterList/>
-      <Idea/>
-    </>
+        ideas.map((idea) => {
+            return <Idea key={idea.id} idea={idea}/>
+        })      
   )
 }
 
