@@ -10,7 +10,7 @@ const champNames = [
 
     {
         "name": "PQR",
-        "portfolio": "Manufacturing"
+        "portfolio": "Human Resource "
     },
 
      {
