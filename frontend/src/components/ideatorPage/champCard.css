@@ -48,7 +48,9 @@
 }
 
 .cardContainer .card h4{
-    color: black;}
+    color: black;
+    margin-bottom: 20px;
+}
 
 .cardContainer .card h5{
     color: red;
