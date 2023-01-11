@@ -4,6 +4,8 @@ import './navbar.css';
 import { useCookies } from 'react-cookie';
 import Logo from './images/logo.png'
 import userImage from "../../img/userImage.png"
+import { NavLink } from 'react-router-dom';
+
 
 function Navbar() {
     const [btnPopup, setbtnPopup] = useState(false);
@@ -12,22 +14,24 @@ function Navbar() {
 
     const sessionUser = cookies.user
     // console.log(sessionUser)
-    if(sessionUser){
+    if (sessionUser) {
         return (
             <div className="navbar2">
-                <img src={Logo} style={{"height": "80%"}} alt=""/>
+                <img src={Logo} style={{ "height": "80%" }} alt="" />
                 <div>
                     <span>{sessionUser.username}</span>
-                    <button className='butt'>LogOut</button>
-                    <img src={userImage} alt="" className="usrimg"/>
+                    <NavLink end to="/">
+                        <button className='butt' onClick={removeCookie('user')}>LogOut</button>
+                    </NavLink>
+                    <img src={userImage} alt="" className="usrimg" />
                 </div>
             </div>
-          )
-    }else{
+        )
+    } else {
         return (
             <div className="navbar">
                 {/* <div className="loginBtn" onClick={() => setideaForm(true)}>Apply</div> */}
-                <img src={Logo} style={{"height": "80%"}} alt="" />
+                <img src={Logo} style={{ "height": "80%" }} alt="" />
                 <div className="loginBtn" onClick={() => setbtnPopup(true)}>Login</div>
                 <Popup trigger={btnPopup} setTrigger={setbtnPopup} />
                 {/* <IdeaForm trigger={ideaForm} setTrigger={setideaForm} /> */}
