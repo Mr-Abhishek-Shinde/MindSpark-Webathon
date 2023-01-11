@@ -5,7 +5,7 @@ import { Button } from '@mui/material';
 export default function addCard() {
   return (
     <div className='addCard'>
-    <NavLink end to="/ideaform">
+    <NavLink end to="/programform">
         <Button variant="contained">Add Program</Button>
     </NavLink>
     </div>
