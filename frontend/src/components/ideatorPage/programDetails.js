@@ -12,6 +12,7 @@ function ProgramDetails() {
   let location = useLocation();
 
   const navigate=useNavigate()
+  
   return (
     <div className="details-container-outer">
       <div className="details-container">
