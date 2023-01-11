@@ -38,7 +38,7 @@ const BasicForm = () => {
     );
 };
 
-const PaymentForm = () => {
+const ideaSubmitForm = () => {
     return (
         <>
             <div className="ideaFormContainer">
@@ -56,7 +56,7 @@ function getStepContent(step) {
             return <BasicForm />;
 
         case 1:
-            return <PaymentForm />;
+            return <ideaSubmitForm />;
 
         default:
             return "unknown step";

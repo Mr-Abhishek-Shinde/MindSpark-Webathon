@@ -2,7 +2,6 @@ import { React, useRef } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './idea.css'
-import userImage from "../../img/userImage.png"
 import emailjs from '@emailjs/browser';
 
 function Idea({ idea }) {
@@ -37,7 +36,7 @@ function Idea({ idea }) {
     };
 
     const notifyAccept = () => {
-        toast("acception email sent to ideator successfully!!");
+        toast("Acceptance email sent to ideator successfully!!");
     }
 
     const notifyReject = () => {
@@ -78,7 +77,9 @@ function Idea({ idea }) {
                         <span className='idea-btn accept' onClick={sendEmail1}>Accept</span>
                     </form>
 
-                    <span className='idea-btn hold'>Hold</span>
+                    <form className="accept-form" ref={form} onSubmit="">
+                        <span className='idea-btn hold'>Hold</span>
+                    </form>
 
                     <form className="accept-form" ref={form} onSubmit="">
                         <div className="input-section2">
