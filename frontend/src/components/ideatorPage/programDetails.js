@@ -1,18 +1,15 @@
 import {React} from 'react'
-import cardImg from '../../img/wallpaper.jpg';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import PersonIcon from '@mui/icons-material/Person';
 import './programDetails.css';
 import { Button } from '@mui/material';
 import { NavLink,useNavigate} from "react-router-dom";
-import Prog2 from '../../img/prog2.jpg';
 import { useLocation } from 'react-router-dom'
 
 
 function ProgramDetails() {
 
   let location = useLocation();
-  // console.log(location.state.from.name);
 
   const navigate=useNavigate()
   return (

@@ -8,7 +8,7 @@
     flex-direction: column;
     margin: 0;
     padding: 20px;
-    /* background-color: azure; */
+    background-color: rgb(189, 222, 237);
 }
 
 .homeContainer .titleText{
