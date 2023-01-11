@@ -3,9 +3,9 @@ import Prog1 from '../../img/prog1.jpg';
 import Prog2 from '../../img/prog2.jpg';
 import Prog3 from '../../img/prog3.jpg';
 import './programCard.css'
-import ProgramDetails from './programDetails';
 import { Button } from '@material-ui/core';
 import { NavLink } from "react-router-dom";
+
 
 const progNames = [
   {
@@ -40,6 +40,8 @@ const progNames = [
 ];
 
 function ProgramCard(props) {
+  // const [program, setProgram] = useState([]);
+  // setProgram(progNames);
   const [details, setDetails] = useState(false);
 
   return (
@@ -57,7 +59,7 @@ function ProgramCard(props) {
               {prog.tags.slice(0, 2).map((tag) => { return <span>{tag}</span> })}
               <p>+{prog.tags.length - 2} more</p>
             </div>
-            <NavLink end to="/programDetails" >
+            <NavLink end to="/programDetails" state={{ from: prog}}>
               <Button variant="contained" onClick={() => { setDetails(true) }}>View Details</Button>
             </NavLink>
 

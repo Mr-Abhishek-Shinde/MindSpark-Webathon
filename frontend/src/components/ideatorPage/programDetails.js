@@ -6,19 +6,23 @@ import './programDetails.css';
 import { Button } from '@mui/material';
 import { NavLink,useNavigate} from "react-router-dom";
 import Prog2 from '../../img/prog2.jpg';
+import { useLocation } from 'react-router-dom'
 
 
 function ProgramDetails() {
+
+  let location = useLocation();
+  // console.log(location.state.from.name);
 
   const navigate=useNavigate()
   return (
     <div className="details-container-outer">
       <div className="details-container">
         <div className="image-container">
-          <img src={Prog2} alt="" />
+          <img src={location.state.from.ProgImg} alt="" />
         </div>
         <div className="info-container">
-          <h3>Bridgestone- Marketing</h3>
+          <h3>{location.state.from.name}</h3>
           <p>Idea submission for Marketing dept.</p>
           <div className="pro-duration">
             <h4>Program Duration Check Timeline </h4>
