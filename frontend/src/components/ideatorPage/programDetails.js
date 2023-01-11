@@ -5,15 +5,17 @@ import PersonIcon from '@mui/icons-material/Person';
 import './programDetails.css';
 import { Button } from '@mui/material';
 import { NavLink,useNavigate} from "react-router-dom";
+import Prog2 from '../../img/prog2.jpg';
 
 
 function ProgramDetails() {
+
   const navigate=useNavigate()
   return (
     <div className="details-container-outer">
       <div className="details-container">
         <div className="image-container">
-          <img src={cardImg} alt="" />
+          <img src={Prog2} alt="" />
         </div>
         <div className="info-container">
           <h3>Bridgestone- Marketing</h3>
