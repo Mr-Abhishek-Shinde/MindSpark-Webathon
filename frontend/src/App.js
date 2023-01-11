@@ -5,7 +5,7 @@ import InnovationChampion from "./pages/innovationChampion"
 import SubmitIdea from "./pages/submitPage";
 import ProgramPage from "./pages/programPage"
 import AdminPage from "./pages/adminPage"
-import ProgramForm from "./components/ideaForm"
+import ProgramForm from "./pages/programForm"
 import {
 	BrowserRouter as Router,
 	Routes,
