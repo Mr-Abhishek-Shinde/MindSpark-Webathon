@@ -41,7 +41,7 @@ function ProgramDetails() {
             <span>#AICognitive</span>
             <span>#Test</span>
             <p>+2 more</p></div>
-          <NavLink end to='/submitIdea' >
+          <NavLink end to='/submitIdea' state={{ fromm: location.state.from.name }} >
           <Button variant="contained" color="success">Apply</Button>
 					</NavLink>
           {/* <NavLink end to='/Ideator' > */}

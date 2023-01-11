@@ -7,7 +7,9 @@ export default function Ideator() {
 
     return (
         <>
+        <div className="ideapage-container">
             <IdeaForm />
+        </div>
         </>
 
     )

@@ -59,7 +59,7 @@ function ProgramCard(props) {
               {prog.tags.slice(0, 2).map((tag) => { return <span>{tag}</span> })}
               <p>+{prog.tags.length - 2} more</p>
             </div>
-            <NavLink end to="/programDetails" state={{ from: prog}}>
+            <NavLink end to="/programDetails" state={{ from : prog}}>
               <Button variant="contained" onClick={() => { setDetails(true) }}>View Details</Button>
             </NavLink>
 
