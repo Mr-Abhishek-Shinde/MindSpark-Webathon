@@ -69,6 +69,7 @@ function Login(props) {
 		console.log(data)
 		if (data == "invalid_credentials") {
 			notifyIncorrectDetails();
+			setCookie('user', data, { path: '/' });
 		}
 		else {
 			// setId(data.id);
@@ -79,7 +80,6 @@ function Login(props) {
 		}
 
 
-		setCookie('user', data, { path: '/' });
 	}
 
 	const [authType, setauthType] = useState('user');

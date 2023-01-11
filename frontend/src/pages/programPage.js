@@ -8,7 +8,7 @@ export default function ProgramPage() {
 
     return (
         <>
-            <Navbar/>
+            {/* <Navbar2/> */}
             <ProgramDetails/>
         </>
 
