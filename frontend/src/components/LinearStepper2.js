@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import './ideatorPage/linearStepper.css'
-import { Typography, Button, Stepper, Step, StepLabel } from "@material-ui/core";
-
+import { Typography, Stepper, Step, StepLabel } from "@material-ui/core";
+import { Button } from '@mui/material';
 import { makeStyles } from "@material-ui/core/styles";
 import { useForm, FormProvider } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+
 
 const useStyles = makeStyles((theme) => ({
     button: {
@@ -59,6 +61,9 @@ const LinearStepper = () => {
         setActiveStep(activeStep + 1);
     };
 
+    const navigate2 = useNavigate()
+
+
 
     return (
         <div className="formContainer">
@@ -76,9 +81,14 @@ const LinearStepper = () => {
             </Stepper>
 
             {activeStep === steps.length ? (
-                <Typography variant="h3" align="center">
-                    Thank You
-                </Typography>
+                <>
+                <div className="thankyou-container">
+                    <Typography variant="h2" align="center">
+                        Thank You
+                    </Typography>
+                    <Button variant="contained" color="error" onClick={() => navigate2(-1)}>Return to Dashboard</Button>
+                </div>
+            </>
             ) : (
                 <>
                     <FormProvider {...methods}>
