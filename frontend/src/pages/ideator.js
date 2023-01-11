@@ -8,11 +8,11 @@ export default function Ideator() {
 
     const params = useParams();
 
-    console.log(params);
+    //console.log(params);
 
     return (
         <>
-            {/* <Navbar2 /> */}
+            <Navbar/>
             <ProgramCard />
             <ChampCard />
         </>

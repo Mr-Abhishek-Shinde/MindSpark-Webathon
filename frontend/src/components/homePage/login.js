@@ -69,14 +69,15 @@ function Login(props) {
 		console.log(data)
 		if (data == "invalid_credentials") {
 			notifyIncorrectDetails();
-			setCookie('user', data, { path: '/' });
 		}
 		else {
+			
 			// setId(data.id);
 			// setRolee(data.role);
 			id = data.id;
 			rolee = data.role;
 			notifyLogin();
+			setCookie('user', data, { path: '/' });
 		}
 
 
