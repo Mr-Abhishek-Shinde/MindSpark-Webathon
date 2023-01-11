@@ -12,7 +12,7 @@ export default function Ideator() {
 
     return (
         <>
-            <Navbar />
+            {/* <Navbar2 /> */}
             <ProgramCard />
             <ChampCard />
         </>
