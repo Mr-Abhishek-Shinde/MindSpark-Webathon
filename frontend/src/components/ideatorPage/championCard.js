@@ -1,6 +1,6 @@
 import React from 'react';
 import './champCard.css';
-import userImage from "../../img/userImage.png"
+import userImage from "../../img/avatar2.png"
 
 const champNames = [
      {
@@ -10,7 +10,7 @@ const champNames = [
 
     {
         "name": "PQR",
-        "portfolio": "Manufacturing"
+        "portfolio": "Human Resource "
     },
 
      {

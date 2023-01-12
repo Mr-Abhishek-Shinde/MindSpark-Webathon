@@ -13,7 +13,7 @@ export default function Ideator() {
     return (
         <>
             <Navbar/>
-            <div className="main_container" style={{backgroundColor:"#f0f0f0"}}>
+            <div className="main_container" style={{backgroundColor:"#f0f0f0", height:"100%"}}>
             <ProgramCard />
             <ChampCard />
             </div>

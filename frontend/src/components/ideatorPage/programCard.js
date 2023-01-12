@@ -30,7 +30,7 @@ const progNames = [
 
   {
     "name": "Bridgestone-HR",
-    "": "Human Resource",
+    "portfolio": "Human Resource",
     "tags": ['#Management,MBA,PGDM', '#2D & 3D CAD', '#AI & Cognitive', '#Test'],
     "duration": "Monday 5 Dec 2022 \t To \t Thursday 5 Jan 2023",
     "submit-date": "Monday 5 Dec 2022 \t To \t Thursday 5 Jan 2023",
