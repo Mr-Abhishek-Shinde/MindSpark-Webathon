@@ -3,18 +3,22 @@
     /* min-height: calc(100vh - 65px); */
     height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     margin: 0;
     padding: 20px;
     background-color: rgb(189, 222, 237);
+    background: url(./images/homeImg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .homeContainer .titleText{
     font-size: 35px;
     color: black;
     font-weight: 700;
+    padding-left: 5vw;
 }
 .homeContainer .titleText .span1{
     font-size: 50px;
