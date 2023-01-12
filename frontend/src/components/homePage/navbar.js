@@ -19,7 +19,7 @@ function Navbar() {
             <div className="navbar2">
                 <img src={Logo} style={{ "height": "80%" }} alt="" />
                 <div>
-                    <span>{sessionUser.username}</span>
+                    <span className='spa'>{sessionUser.username}</span>
                     <NavLink end to="/">
                         <button className='butt' onClick={removeCookie('user')}>LogOut</button>
                     </NavLink>

@@ -51,7 +51,7 @@
 
 .usrimg{
     position: absolute;
-    right: 155px;
+    right: 130px;
     height: 80%;
     filter: invert();
     top: 5px;
@@ -64,4 +64,8 @@
     background-color: red;
     color: white;
     padding: 8px 15px;
+}
+
+.spa{
+    margin-right: 60px;
 }
