@@ -4,17 +4,17 @@ import userImage from "../../img/avatar2.png"
 
 const champNames = [
      {
-        "name": "ABC",
+        "name": "Idea Champion",
         "portfolio": "Marketing"
     },
 
     {
-        "name": "PQR",
+        "name": "Idea Champion",
         "portfolio": "Human Resource "
     },
 
      {
-        "name": "XYZ",
+        "name": "Idea Champion",
         "portfolio": "Finance"
     },
 ];

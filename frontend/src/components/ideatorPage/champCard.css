@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
 .secContainer{
     width: 90%;
     padding: 50px 0 0 0;
@@ -14,7 +16,9 @@
 }
 
 .secContainer h1{
-    color: rgb(153, 4, 4);
+    /* color: rgb(153, 4, 4); */
+    font-family: 'Fredoka One', cursive;
+    font-size: 48px;
 }
 
 .cardContainer{

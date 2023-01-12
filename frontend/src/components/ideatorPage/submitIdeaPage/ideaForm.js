@@ -9,9 +9,7 @@ function IdeaForm() {
     let location3 = useLocation();
     const [role, setRole] = useState(location3.state.fromm);
 
-    const submitIdeaDetails = async (event) => {
-        setTimeout(navigate3(-2),3000)
-	}
+  
 
     const navigate3=useNavigate();
     const notifySubmitted = () => {
@@ -28,11 +26,11 @@ function IdeaForm() {
             <div class="ideaform-container">
                 {/* <div className="back_button"><ArrowBackIcon/></div> */}
                 <div className="form-title" ><h2>Idea Submission Form</h2></div>
-                <form name="iideaForm" onSubmit={submitIdeaDetails}>
+                <form name="iideaForm" >
                     <p>Program Name: <select value={role} onChange={(e) => setRole(e.target.value)} required="true">
                         <option selected="true" value={role}>{role}</option>
                     </select></p>
-                    <p>Idea Title: <input type="text" name="idea" placeholder="Enter The Name of Your Idea" /></p>
+                    <p>Idea Title: <input type="text" name="idea" placeholder="Enter The Name of Your Idea" required="true"/></p>
                     <p>Idea Details: <input type="text" name="body" placeholder="Enter Description of the Idea" /></p>
                     <p>Idea Image Link: <input type="text" name="body" placeholder="Paste the Idea Image Link Here" /></p>
                     <p class="buttons">

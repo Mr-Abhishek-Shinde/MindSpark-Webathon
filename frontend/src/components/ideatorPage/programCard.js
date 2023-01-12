@@ -11,7 +11,7 @@ const progNames = [
   {
     "name": "Bridgestone-Finance",
     "portfolio": "Finance",
-    "tags": ['#Management,MBA,PGDM', '#2D & 3D CAD', '#AI & Cognitive', '#Test'],
+    "tags": ['#Management,MBA,PGDM',  '#Analytics','#2D & 3D CAD', '#Test'],
     "duration": "Monday 5 Dec 2022 \t To \t Thursday 5 Jan 2023",
     "submit-date": "Monday 5 Dec 2022 \t To \t Thursday 5 Jan 2023",
     "ProgImg": Prog1
@@ -21,7 +21,7 @@ const progNames = [
   {
     "name": "Bridgestone-Marketing",
     "portfolio": "Marketing",
-    "tags": ['#Management,MBA,PGDM', '#2D & 3D CAD', '#AI & Cognitive', '#Test'],
+    "tags": ['#Management,MBA,PGDM',  '#AI & Cognitive', '#Test'],
     "duration": "Monday 5 Dec 2022 \t To \t Thursday 5 Jan 2023",
     "submit-date": "Monday 5 Dec 2022 \t To \t Thursday 5 Jan 2023",
     "ProgImg": Prog2
@@ -31,7 +31,7 @@ const progNames = [
   {
     "name": "Bridgestone-HR",
     "portfolio": "Human Resource",
-    "tags": ['#Management,MBA,PGDM', '#2D & 3D CAD', '#AI & Cognitive', '#Test'],
+    "tags": ['#Management,MBA,PGDM', '#2D & 3D CAD', '#AI & Cognitive', '#Test','#HumanResorce'],
     "duration": "Monday 5 Dec 2022 \t To \t Thursday 5 Jan 2023",
     "submit-date": "Monday 5 Dec 2022 \t To \t Thursday 5 Jan 2023",
     "ProgImg": Prog3
