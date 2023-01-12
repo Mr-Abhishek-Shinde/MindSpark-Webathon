@@ -1,0 +1,32 @@
+.homeContainer{
+    width: 100%;
+    /* min-height: calc(100vh - 65px); */
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 20px;
+    background-color: rgb(189, 222, 237);
+    background: url(./images/homeImg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.homeContainer .titleText{
+    font-size: 55px;
+    color: black;
+    font-weight: 700;
+    padding-left: 5vw;
+}
+.homeContainer .titleText .span1{
+    font-size: 70px;
+    color: rgb(228, 35, 0);
+}
+.homeContainer .titleText .span2{
+    font-size: 55px;
+    color: rgb(39, 18, 227);
+}
+
+

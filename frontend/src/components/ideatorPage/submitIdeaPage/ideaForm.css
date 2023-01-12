@@ -1,0 +1,53 @@
+.closeBtn2{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.ideapage-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 100px;
+}
+
+
+.ideaform-container {
+    width: 80%;
+    background-color: #f2f2f2;
+    padding: 15px 15px 15px 15px;
+    border: 2px solid grey;
+    border-radius: 20px;
+}
+
+
+.ideaform-container input[type="text"],
+.ideaform-container input[type="email"],
+.ideaform-container textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1.5px solid #ccc;
+    margin: 6px;
+}
+
+.ideaform-container select{
+    width: 100%;
+    padding: 8px;
+    border: 1.5px solid #ccc;
+    margin: 6px;
+}
+
+.ideaform-container input[type="submit"] {
+    margin: 0px 40px 0px 0px;
+}
+
+.ideaform-container input[type="submit"]:active {
+    box-shadow: 0 2px;
+    transform: translateY(1px);
+}
+.ideaform-container button{
+    margin: 10px !important;
+}
