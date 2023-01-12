@@ -33,7 +33,7 @@
 margin: 10px;
 }
 .image-container img {
-    width: 100%;
+    width: 95%;
     object-fit: contain;
 }
 .info-container{
