@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './popup.css'
 import Login from './login'
+import { Button } from '@mui/material';
 
 function Popup(props) {
   const [authType, setauthType] = useState(true);
@@ -33,7 +34,8 @@ function Popup(props) {
   return (props.trigger) ? (
     <div className="popup">
       <div className="innerContainer">
-        <button className="closeBtn" onClick={() => { props.setTrigger(false); setauthType(true) }}>Close</button>
+        {/* <button className="closeBtn" onClick={() => { props.setTrigger(false); setauthType(true) }}>Close</button> */}
+        <Button className="closeBtn" variant="contained" color="error" onClick={()=>{ props.setTrigger(false); setauthType(true) }}>Close</Button>        
         {/* {props.children} */}
 
         <div className="wrap">
