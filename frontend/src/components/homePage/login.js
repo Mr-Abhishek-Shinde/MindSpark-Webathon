@@ -67,18 +67,21 @@ function Login(props) {
 		})
 		const data = await response.json()
 		console.log(data)
+
+
+
+
 		if (data == "invalid_credentials") {
 			notifyIncorrectDetails();
 		}
 		else {
-			
-			// setId(data.id);
-			// setRolee(data.role);
+			setCookie('user', data, { path: '/' });
 			id = data.id;
 			rolee = data.role;
 			notifyLogin();
-			setCookie('user', data, { path: '/' });
 		}
+
+
 
 
 	}
@@ -108,24 +111,24 @@ function Login(props) {
 		toast.warning("You have already registered! Please login to continue.");
 	}
 
-    const form = useRef();
+	const form = useRef();
 
 	const sendEmail = (e) => {
-        e.preventDefault();
+		e.preventDefault();
 
-        emailjs.sendForm('service_3arnah3', 'template_4do962o', form.current, 'P1aYXn6qkhPDWCSkG')
-            .then((result) => {
-                console.log(result.text);
-            }, (error) => {
-                console.log(error.text);
-            });
+		emailjs.sendForm('service_3arnah3', 'template_4do962o', form.current, 'P1aYXn6qkhPDWCSkG')
+			.then((result) => {
+				console.log(result.text);
+			}, (error) => {
+				console.log(error.text);
+			});
 
 		notify();
-    };
+	};
 
-    const notify = () => {
-        toast("Message sent successfully!!");
-    }
+	const notify = () => {
+		toast("Message sent successfully!!");
+	}
 
 	return (props.trigger) ? (
 		<div className="login">
