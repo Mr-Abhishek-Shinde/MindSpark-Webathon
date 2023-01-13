@@ -24,7 +24,7 @@ const App = () => {
 					<Route path="/innovation_champion/:id" element={<InnovationChampion />} />
 					<Route path="/submitIdea" element={<SubmitIdea />} />
 					<Route path="/programDetails" element={<ProgramPage />} />
-					<Route path="/admin" element={<AdminPage />} />
+					<Route path="/admin/:id" element={<AdminPage />} />
 					<Route path="/programform" element={<ProgramForm />} />
 				</Routes>
 			</Router>

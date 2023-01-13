@@ -13,7 +13,7 @@ function AddProgram() {
 }
   const goHome = () =>{
       setTimeout(() => {
-          navigate4(-2);
+          navigate4(-1);
         }, "4000")
   }
 

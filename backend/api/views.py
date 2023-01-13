@@ -144,6 +144,7 @@ def createUser(request):
             )
 
             data = {
+                "id" : innovation_champion.id,
                 "first_name": innovation_champion.first_name, 
                 "last_name": innovation_champion.last_name,
                 "username": innovation_champion.username, 
@@ -167,6 +168,7 @@ def createUser(request):
             )
 
             data = {
+                "id": admin.id,
                 "first_name": admin.first_name, 
                 "last_name": admin.last_name,
                 "username": admin.username, 
