@@ -120,6 +120,7 @@ def createUser(request):
             )
 
             data = {
+                "id" : ideator.id,
                 "first_name": ideator.first_name, 
                 "last_name": ideator.last_name,
                 "username": ideator.username, 

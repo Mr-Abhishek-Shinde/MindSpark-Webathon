@@ -1,14 +1,13 @@
 import { React, useState, useRef } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useCookies } from 'react-cookie';
+
 import { useNavigate } from 'react-router';
 import { createBrowserHistory } from 'history';
 import emailjs from '@emailjs/browser';
 
 
 function Login(props) {
-	const [cookies, setCookie, removeCookie] = useCookies(['user']);
 	const navigate = useNavigate()
 	const history = createBrowserHistory();
 	// const [id, setId] = useState("");
@@ -42,6 +41,11 @@ function Login(props) {
 		console.log(data)
 		if (data !== "existing_user") {
 			notifyRegistered();
+				id = data.id;
+				rolee = data.role;
+			// loginUser(event)
+			history.push(`/${rolee}/${id}`);
+			navigate(`/${rolee}/${id}`);
 		}
 		else {
 			notifyExistingUser();
@@ -66,16 +70,11 @@ function Login(props) {
 			body: JSON.stringify(user)
 		})
 		const data = await response.json()
-		console.log(data)
-
-
-
 
 		if (data == "invalid_credentials") {
 			notifyIncorrectDetails();
 		}
 		else {
-			setCookie('user', data, { path: '/' });
 			id = data.id;
 			rolee = data.role;
 			notifyLogin();
@@ -94,37 +93,38 @@ function Login(props) {
 	}
 
 	const notifyLogin = () => {
-		// toast.success("Logged in Successfully!");
-		console.log(rolee)
+		toast.success("Logged in Successfully!");
 		history.push(`/${rolee}/${id}`);
-
 		navigate(`/${rolee}/${id}`);
 	}
+
 	const notifyIncorrectDetails = () => {
 		toast.warning("Please enter the correct details or register if not registered.");
 	}
+
 	const notifyRegistered = () => {
 		toast.success("Registered Successfully!");
-		sendEmail();
+		// sendEmail();
 	}
+
 	const notifyExistingUser = () => {
 		toast.warning("You have already registered! Please login to continue.");
 	}
 
 	const form = useRef();
 
-	const sendEmail = (e) => {
-		e.preventDefault();
+	// const sendEmail = (e) => {
+	// 	e.preventDefault();
 
-		emailjs.sendForm('service_3arnah3', 'template_4do962o', form.current, 'P1aYXn6qkhPDWCSkG')
-			.then((result) => {
-				console.log(result.text);
-			}, (error) => {
-				console.log(error.text);
-			});
+	// 	emailjs.sendForm('service_3arnah3', 'template_4do962o', form.current, 'P1aYXn6qkhPDWCSkG')
+	// 		.then((result) => {
+	// 			console.log(result.text);
+	// 		}, (error) => {
+	// 			console.log(error.text);
+	// 		});
 
-		notify();
-	};
+	// 	notify();
+	// };
 
 	const notify = () => {
 		toast("Message sent successfully!!");
