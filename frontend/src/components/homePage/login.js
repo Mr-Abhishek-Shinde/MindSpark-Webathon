@@ -28,7 +28,7 @@ function Login(props) {
 			"role": props.role
 		}
 
-		const response = await fetch("http://localhost:8000/api/users/new/", {
+		const response = await fetch("https://bridgestone-backend-production-acbf.up.railway.app/api/users/new/", {
 			method: "POST",
 			mode: 'cors',
 			headers: {
@@ -60,7 +60,7 @@ function Login(props) {
 			"password": event.target.passw.value,
 		}
 
-		const response = await fetch("http://localhost:8000/api/users/login/", {
+		const response = await fetch("https://bridgestone-backend-production-acbf.up.railway.app/api/users/login/", {
 			method: "POST",
 			mode: 'cors',
 			headers: {
