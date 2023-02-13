@@ -119,18 +119,8 @@ def createUser(request):
                 date_joined = user.date_joined
             )
 
-            data = {
-                "id" : ideator.id,
-                "first_name": ideator.first_name, 
-                "last_name": ideator.last_name,
-                "username": ideator.username, 
-                "email": ideator.email, 
-                "password": ideator.password,
-                "role" : ideator.role,
-                "date_joined" : ideator.date_joined 
-            }
-
-            return JsonResponse(data)
+            serializer = IdeatorSerializer(ideator, many=False)
+            return Response(serializer.data)
 
         elif role == "innovation_champion":
             innovation_champion  =  Innovation_Champion.objects.create(
@@ -143,18 +133,8 @@ def createUser(request):
                 date_joined = user.date_joined
             )
 
-            data = {
-                "id" : innovation_champion.id,
-                "first_name": innovation_champion.first_name, 
-                "last_name": innovation_champion.last_name,
-                "username": innovation_champion.username, 
-                "email": innovation_champion.email, 
-                "password": innovation_champion.password,
-                "role" : innovation_champion.role,
-                "date_joined" : innovation_champion.date_joined 
-            }
-
-            return JsonResponse(data)
+            serializer = InnovationChampionSerializer(innovation_champion, many=False)
+            return Response(serializer.data)
 
         elif role == "admin":
             admin  =  Admin.objects.create(
@@ -167,17 +147,8 @@ def createUser(request):
                 date_joined = user.date_joined
             )
 
-            data = {
-                "id": admin.id,
-                "first_name": admin.first_name, 
-                "last_name": admin.last_name,
-                "username": admin.username, 
-                "email": admin.email, 
-                "password": admin.password,
-                "role" : admin.role,
-                "date_joined" : admin.date_joined 
-            }
-            return JsonResponse(data)
+            serializer = AdminSerializer(admin, many=False)
+            return Response(serializer.data)
 
     except:
         return Response("existing_user")

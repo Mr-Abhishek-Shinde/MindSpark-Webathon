@@ -10,16 +10,17 @@ function Navbar() {
     const [btnPopup, setbtnPopup] = useState(false);
     const [ideaForm, setideaForm] = useState(false);
 
-    // const sessionUser = cookies.user
-    // console.log(sessionUser)
-    if (0) {
+    // const sessionUser = localStorage.setItem('sessionId', id);
+    const sessionUser = localStorage.getItem("sessionId");
+    console.log(sessionUser)
+    if (sessionUser) {
         return (
             <div className="navbar2">
                 <img src={Logo} style={{ "height": "80%" }} alt="" />
                 <div>
                     {/* <span className='spa'>{sessionUser.username}</span> */}
                     <NavLink end to="/">
-                        <button className='butt' >LogOut</button>
+                        <button className='butt' onClick={() => localStorage.removeItem("sessionId")} >LogOut</button>
                     </NavLink>
                     <img src={userImage} alt="" className="usrimg" />
                 </div>

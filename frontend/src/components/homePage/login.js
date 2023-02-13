@@ -28,7 +28,7 @@ function Login(props) {
 			"role": props.role
 		}
 
-		const response = await fetch("https://bridgestone-backend-production-acbf.up.railway.app/api/users/new/", {
+		const response = await fetch("http://127.0.0.1:8000/api/users/new/", {
 			method: "POST",
 			mode: 'cors',
 			headers: {
@@ -41,8 +41,9 @@ function Login(props) {
 		console.log(data)
 		if (data !== "existing_user") {
 			notifyRegistered();
-				id = data.id;
-				rolee = data.role;
+			localStorage.setItem('sessionId', data.id);
+			id = data.id;
+			rolee = data.role;
 			// loginUser(event)
 			history.push(`/${rolee}/${id}`);
 			navigate(`/${rolee}/${id}`);
@@ -60,7 +61,7 @@ function Login(props) {
 			"password": event.target.passw.value,
 		}
 
-		const response = await fetch("https://bridgestone-backend-production-acbf.up.railway.app/api/users/login/", {
+		const response = await fetch("http://127.0.0.1:8000/api/users/login/", {
 			method: "POST",
 			mode: 'cors',
 			headers: {
@@ -70,6 +71,7 @@ function Login(props) {
 			body: JSON.stringify(user)
 		})
 		const data = await response.json()
+		console.log(data)
 
 		if (data == "invalid_credentials") {
 			notifyIncorrectDetails();
@@ -77,6 +79,7 @@ function Login(props) {
 		else {
 			id = data.id;
 			rolee = data.role;
+			localStorage.setItem('sessionId', id);
 			notifyLogin();
 		}
 
